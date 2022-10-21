@@ -18,7 +18,7 @@ public class MenuController {
 	    }
 	    
 	    @FXML
-	    private void abrirFormulario(ActionEvent event) {    	
+	    private void abrirFormulario(ActionEvent event) {
 	    	try {
 				// Cargamos el archivo Controles Dinámicos
 				FXMLLoader loader = new FXMLLoader();
