@@ -32,7 +32,10 @@
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#abrirEditar" text="ABRIR" />
                </items></Menu>
-          <Menu mnemonicParsing="false" onAction="#abrirTutorial" text="TUTORIAL" />
+          <Menu mnemonicParsing="false" text="TUTORIAL">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#abrirTutorial" text="ABRIR" />
+               </items></Menu>
         </menus>
       </MenuBar>
    </top>
