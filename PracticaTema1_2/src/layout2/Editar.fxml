@@ -99,7 +99,7 @@
                   <Button mnemonicParsing="false" text="BUSCAR" />
                </children>
             </HBox>
-            <TableView fx:id="tableModificar" fixedCellSize="30.0" prefHeight="178.0" prefWidth="476.0" tableMenuButtonVisible="true">
+            <TableView fx:id="tableModificar" editable="true" fixedCellSize="30.0" prefHeight="178.0" prefWidth="476.0" tableMenuButtonVisible="true">
                <columns>
                   <TableColumn fx:id="Nombre" prefWidth="135.19996297359467" text="Nombre" />
                   <TableColumn fx:id="Apellidos" prefWidth="113.60003662109375" text="Apellidos" />

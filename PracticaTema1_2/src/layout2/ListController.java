@@ -6,7 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
-
+import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
@@ -15,6 +15,7 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldListCell;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.control.cell.TextFieldTreeCell;
 
 public class ListController {
@@ -83,9 +84,15 @@ public class ListController {
         // Ítems del ComboBox
 		comboNumEntradaAdulto.getItems().addAll(1,2,3,4,5,6,7,8,9);
 		comboNnumEntradaInfantil.getItems().addAll(1,2,3,4,5,6,7,8,9);
-		//hacer la cantidad editable
 		
-		
+		//hacer editable la tabla modificar
+		Nombre.setCellFactory(TextFieldTableCell.forTableColumn());
+		Apellidos.setCellFactory(TextFieldTableCell.forTableColumn());
+		FechaEntrada.setCellFactory(TextFieldTableCell.forTableColumn());
+		FormaDePago.setCellFactory(TextFieldTableCell.forTableColumn());
+		/*Descuento.setCellFactory(TextFieldTableCell.forTableColumn());
+		NumAdultos.setCellFactory(TextFieldTableCell.forTableColumn());
+		NumNiños.setCellFactory(TextFieldTableCell.forTableColumn());
+		Total.setCellFactory(TextFieldTableCell.forTableColumn());*/
 	}
-
 }
