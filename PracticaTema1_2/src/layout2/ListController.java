@@ -17,6 +17,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldListCell;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.control.cell.TextFieldTreeCell;
+import javafx.util.converter.IntegerStringConverter;
 
 public class ListController {
 
@@ -90,9 +91,8 @@ public class ListController {
 		Apellidos.setCellFactory(TextFieldTableCell.forTableColumn());
 		FechaEntrada.setCellFactory(TextFieldTableCell.forTableColumn());
 		FormaDePago.setCellFactory(TextFieldTableCell.forTableColumn());
-		/*Descuento.setCellFactory(TextFieldTableCell.forTableColumn());
-		NumAdultos.setCellFactory(TextFieldTableCell.forTableColumn());
-		NumNiños.setCellFactory(TextFieldTableCell.forTableColumn());
-		Total.setCellFactory(TextFieldTableCell.forTableColumn());*/
+		Descuento.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+		NumAdultos.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+		NumNiños.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
 	}
 }
