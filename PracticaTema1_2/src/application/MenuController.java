@@ -14,7 +14,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldListCell;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import layout2.Person;
+//import layout2.Person;
 
 public class MenuController {
 	// Pantalla principal en la que se añade o quita contenido

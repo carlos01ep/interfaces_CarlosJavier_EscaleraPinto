@@ -1,10 +1,12 @@
 package layout2;
 
+import application.Persona;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
+
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
@@ -17,35 +19,73 @@ import javafx.scene.control.cell.TextFieldTreeCell;
 
 public class ListController {
 
-    @FXML
-    private TableView<Person> table1;
-    
-    @FXML
-    private TableColumn<Person, String> firstNameCol;
+	@FXML
+	private TableColumn<Entrada, String> Apellidos;
 
-    @FXML
-    private TableColumn<Person, String> lastNameCol;
+	@FXML
+	private TableColumn<Entrada, Integer> Descuento;
 
-    @FXML
-    private TableColumn<Person, String> emailCol;
-    
-    @FXML
-    private TableColumn<Person, Integer> ageColumn;
-    
-    
-     // Lista auxiliar para TableView
-    private ObservableList<Person> data = FXCollections.observableArrayList(
-    	    new Person("Jacob", "Smith", "jacob.smith@example.com", 30),
-    	    new Person("Isabella", "Johnson", "isabella.johnson@example.com", 40),
-    	    new Person("Ethan", "Williams", "ethan.williams@example.com", 50),
-    	    new Person("Emma", "Jones", "emma.jones@example.com", 61),
-    	    new Person("Michael", "Brown", "michael.brown@example.com", 34)
-    	);
+	@FXML
+	private TableColumn<Entrada, String> FechaEntrada;
 
-    @FXML
-    private void initialize() {   
+	@FXML
+	private TableColumn<Entrada, String> FormaDePago;
 
+	@FXML
+	private TableColumn<Entrada, String> Nombre;
+
+	@FXML
+	private TableColumn<Entrada, Integer> NumAdultos;
+
+	@FXML
+	private TableColumn<Entrada, Integer> NumNiños;
+
+	@FXML
+	private TableColumn<Entrada, Double> Total;
+
+	@FXML
+	private ComboBox<Integer> comboNnumEntradaInfantil;
+
+	@FXML
+	private ComboBox<Integer> comboNumEntradaAdulto;
+	@FXML
+	private TableView<Entrada> tableModificar;
+	 @FXML
+	    private ChoiceBox<String> ChoiceFormaDePago;
+
+	// Lista auxiliar para TableView
+	    private ObservableList<Entrada> data = FXCollections.observableArrayList(
+	    	    new Entrada("Jacob", "Smith", "01/02/2022","01/02/2022",1,1,5,100.9, "Tarjeta"),
+	    	    new Entrada("Isabella", "Johnson", "01/02/2022","01/02/2022",1,1,5,100.9,"Tarjeta"),
+	    	    new Entrada("Ethan", "Williams", "01/02/2022","01/02/2022",1,1,5,100.9,"Tarjeta"),
+	    	    new Entrada("Emma", "Jones", "01/02/2022","01/02/2022",1,1,5,100.9,"Tarjeta"),
+	    	    new Entrada("Michael", "Brown", "01/02/2022","01/02/2022",1,1,5,100.9,"Tarjeta")
+	    	);
+	@FXML
+	private void initialize() {
+		// Asociamos cada columna del TableView a una propiedad de la clase Person 
+		Nombre.setCellValueFactory(new PropertyValueFactory<Entrada,String>("sspNombre"));
+	    Apellidos.setCellValueFactory(new PropertyValueFactory<Entrada,String>("sspApellido"));
+	    FechaEntrada.setCellValueFactory(new PropertyValueFactory<Entrada,String>("sspFechaEntrada"));
+	    FormaDePago.setCellValueFactory(new PropertyValueFactory<Entrada,String>("sspFormaDePago"));
+	    Descuento.setCellValueFactory(new PropertyValueFactory<Entrada,Integer>("sipDescuento"));
+	    NumAdultos.setCellValueFactory(new PropertyValueFactory<Entrada,Integer>("sipNumEntradasAdulto"));
+	    NumNiños.setCellValueFactory(new PropertyValueFactory<Entrada,Integer>("sipNumEntradasInfantil"));
+	    Total.setCellValueFactory(new PropertyValueFactory<Entrada,Double>("sdpPrecioTotal"));
+        // Se rellena la tabla con objetos de la clase Person
+	    tableModificar.setItems(data);     
+		
+		
+		 // Controles de JavaFX a los que se añaden directamente los items 
+    	// Ítems del ChoiceBox
+		ChoiceFormaDePago.getItems().addAll("Efectivo", "Tarjeta de credito", "Transferencia", "otro");      
         
-    }
-    
+        // Ítems del ComboBox
+		comboNumEntradaAdulto.getItems().addAll(1,2,3,4,5,6,7,8,9);
+		comboNnumEntradaInfantil.getItems().addAll(1,2,3,4,5,6,7,8,9);
+		//hacer la cantidad editable
+		
+		
+	}
+
 }
