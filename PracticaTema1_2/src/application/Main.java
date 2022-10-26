@@ -22,7 +22,7 @@ public class Main extends Application {
 			// Pasamos al controlador de menu el objeto con el BorderPane principal
 			MenuController menuController = loader.getController();
 			menuController.setRootLayout(rootLayout);
-
+			//menuController.abrirInicio(null);
 			// Mostramos la escena del BorderPane de la variable rootLayot
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);

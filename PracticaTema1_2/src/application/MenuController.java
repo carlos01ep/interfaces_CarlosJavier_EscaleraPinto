@@ -12,6 +12,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldListCell;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -69,8 +70,8 @@ public class MenuController {
 	    		//cerrarListado(null);
 				// Cargamos el archivo Controles Dinámicos
 				FXMLLoader loader = new FXMLLoader();
-				loader.setLocation(MenuController.class.getResource("/layout2/Menu.fxml"));
-				GridPane listadoControles = (GridPane) loader.load();
+				loader.setLocation(MenuController.class.getResource("/layout1/inicio.fxml"));
+				AnchorPane listadoControles = (AnchorPane) loader.load();
 
 				// Se sitúa en el centro del diseño principal
 				rootLayout.setCenter(listadoControles);
