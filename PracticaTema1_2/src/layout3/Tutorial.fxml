@@ -51,7 +51,7 @@
                                     <Font name="Tahoma Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="En esta pagína se muestra &#10;de que forma se utiliza la página Tutorial" textAlignment="CENTER" />
+                              <Label text="En este apartado se muestra &#10;de que forma se utiliza la página Tutorial" textAlignment="CENTER" />
                            </children>
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
@@ -74,9 +74,11 @@
                               <Label text="Haciendo click en el símbolo de flecha &#10;que está situada a la izquierda de cada &#10;una de las opciones se puede ocultar o &#10;desplegar el contenido" textAlignment="CENTER" />
                            </children>
                         </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" />
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" />
+                           </children></VBox>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" />
                      </children>
                   </GridPane>
                </content>
@@ -101,7 +103,7 @@
                                     <Font name="Tahoma Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="En esta pagína se muestra &#10;de que forma se utiliza la página Tutorial" textAlignment="CENTER" />
+                              <Label text="En este apartado se muestra &#10;la ayuda sobre la página de inicio" textAlignment="CENTER" />
                            </children>
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
@@ -111,7 +113,7 @@
                                     <Font name="Tahoma Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="El contenido de esta página se encuentra &#10;distribuido un contenedor de tipo Accordion, &#10;en el cual se puede alternar entre ocultar y mostrar &#10;el contenido de la ayuda" textAlignment="CENTER" />
+                              <Label text="A la izquierda se encuentra una tabla la cual lista &#10;en nombre y apellido de las personas que &#10;han comprado entradas y a la derecha un desglose &#10;detallado de los datos de la compra. &#10;&#10;Para mostrar los detalles se debe hacer click &#10;en el nombre o apellido del comprador" textAlignment="CENTER" />
                            </children>
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
@@ -121,89 +123,129 @@
                                     <Font name="Tahoma Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="Haciendo click en el símbolo de flecha &#10;que está situada a la izquierda de cada &#10;una de las opciones se puede ocultar o &#10;desplegar el contenido" textAlignment="CENTER" />
+                              <Label text="En la parte inferior, para mejorar la accesibilidad &#10;a dos opciones muy útiles, se encuentran &#10;los botones de editar y salir&#10;" textAlignment="CENTER" />
                            </children>
                         </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" />
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" />
+                           </children></VBox>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" />
                      </children>
                   </GridPane>
                </content>
             </TitledPane>
             <TitledPane animated="false" text="EDITAR">
                <content>
-                  <GridPane>
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
+                  <VBox>
                      <children>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                        <GridPane prefHeight="224.0" prefWidth="679.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="82.60002746582032" minHeight="52.20001831054688" prefHeight="74.19999389648437" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="172.19998168945312" minHeight="141.7999725341797" prefHeight="149.40000610351564" vgrow="SOMETIMES" />
+                           </rowConstraints>
                            <children>
-                              <Label text="Editar" textFill="#0022a2">
-                                 <font>
-                                    <Font name="Tahoma Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label text="En esta pagína se muestra &#10;de que forma se utiliza la página Tutorial" textAlignment="CENTER" />
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Label text="Editar" textFill="#0022a2">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="En apartado se muestra la ayuda de la &#10;pantalla de mantenimiento&#10;" textAlignment="CENTER" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label text="Navegacion en Editar" textFill="#0022a2">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="El contenido de esta página se divide horizontalmente &#10;en dos zonas. La superior en la que se encuentra el &#10;formulario para añadir una nueva compra &#10;y la inferior en la que, a traves de una tabla,&#10;podemos modificar o borrar una compra&#10;Los botones de la izquierda son los confirmación, &#10;es decir, son los que relizan los cambios " textAlignment="CENTER" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefWidth="340.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                            </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
-                           <children>
-                              <Label text="Navegacion en Editar" textFill="#0022a2">
-                                 <font>
-                                    <Font name="Tahoma Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label text="El contenido de esta página se encuentra &#10;distribuido un contenedor de tipo Accordion, &#10;" textAlignment="CENTER" />
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
-                           <children>
-                              <Label text="Añadir" textFill="#0022a2">
-                                 <font>
-                                    <Font name="Tahoma Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label text="Haciendo click en el símbolo de flecha " textAlignment="CENTER" />
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" />
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" />
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
-                           <children>
-                              <Label text="Modificar" textFill="#0022a2">
-                                 <font>
-                                    <Font name="Tahoma Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label text="Haciendo click en el símbolo de flecha &#10;&#10;" textAlignment="CENTER" />
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="4">
-                           <children>
-                              <Label text="Borrar" textFill="#0022a2">
-                                 <font>
-                                    <Font name="Tahoma Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label text="Haciendo click en el símbolo de flecha &#10;que está situada a la izquierda de cada &#10;&#10;" textAlignment="CENTER" />
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        </GridPane>
+                        <Accordion>
+                          <panes>
+                            <TitledPane animated="false" text="AÑADIR">
+                                 <content>
+                                    <GridPane alignment="CENTER" prefHeight="94.0" prefWidth="678.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Label text="Para añadir una nueva compra se debe rellenar el&#10;formulario y hacer click en AÑADIR&#10;" textAlignment="CENTER" />
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                 </content>
+                            </TitledPane>
+                              <TitledPane animated="false" text="MODIFICAR">
+                                 <content>
+                                    <GridPane alignment="CENTER" prefHeight="94.0" prefWidth="678.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Label text="Para modificar una compara se debe hacer doble click &#10;en el dato de la tabla que se quiere modificar y hacer click &#10;en MODIFICAR&#10;" textAlignment="CENTER" />
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane animated="false" text="BORRAR">
+                                 <content>
+                                    <GridPane alignment="CENTER" prefHeight="94.0" prefWidth="678.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Label text="Para borrar se debe seleccionar una fila de la tabla que se&#10;quiere borrar y hacer click en BORRAR&#10;" textAlignment="CENTER" />
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                 </content>
+                              </TitledPane>
+                          </panes>
+                        </Accordion>
                      </children>
-                  </GridPane>
+                  </VBox>
                </content>
             </TitledPane>
          </panes>
