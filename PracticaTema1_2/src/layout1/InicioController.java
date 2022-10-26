@@ -48,5 +48,6 @@ public class InicioController {
 	        // Se rellena la tabla con objetos de la clase Person
 	        table1.setItems(data);     
 	    }
+	    
 
 }

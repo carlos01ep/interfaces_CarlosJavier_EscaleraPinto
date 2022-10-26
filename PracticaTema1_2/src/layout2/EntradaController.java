@@ -19,7 +19,7 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.control.cell.TextFieldTreeCell;
 import javafx.util.converter.IntegerStringConverter;
 
-public class ListController {
+public class EntradaController {
 
 	@FXML
 	private TableColumn<Entrada, String> Apellidos;

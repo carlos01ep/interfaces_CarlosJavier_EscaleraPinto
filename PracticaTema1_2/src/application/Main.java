@@ -22,11 +22,14 @@ public class Main extends Application {
 			// Pasamos al controlador de menu el objeto con el BorderPane principal
 			MenuController menuController = loader.getController();
 			menuController.setRootLayout(rootLayout);
-			//menuController.abrirInicio(null);
+			menuController.abrirInicio(null);//carga el layout de inicio al empezar
+			
 			// Mostramos la escena del BorderPane de la variable rootLayot
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Parque de Atracciones - Venta de entradas");
+			//primaryStage.setMaximized(true); //checkBox "Leído" de Tutorial descuadrado
+			primaryStage.setResizable(false);
 			primaryStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();

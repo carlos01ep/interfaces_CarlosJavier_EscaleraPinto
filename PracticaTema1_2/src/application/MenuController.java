@@ -21,35 +21,9 @@ import javafx.scene.layout.VBox;
 public class MenuController {
 	// Pantalla principal en la que se añade o quita contenido
 		private BorderPane rootLayout;
-	//Dinamico
-		
-		
 	    @FXML
-	    private TableColumn<Persona, String> colApellido;
-
-	    @FXML
-	    private TableColumn<Persona, String> colNombre;
-
-	    @FXML
-	    private TableView<Persona> table1;
-	    
-	    // Lista auxiliar para TableView
-	    private ObservableList<Persona> data = FXCollections.observableArrayList(
-	    	    new Persona("Jacob", "Smith"),
-	    	    new Persona("Isabella", "Johnson"),
-	    	    new Persona("Ethan", "Williams"),
-	    	    new Persona("Emma", "Jones"),
-	    	    new Persona("Michael", "Brown")
-	    	);
-	    @FXML
-	    private void initialize() {
-	    	 // Asociamos cada columna del TableView a una propiedad de la clase Person 
-		    colNombre.setCellValueFactory(new PropertyValueFactory<Persona,String>("firstName"));
-		    colApellido.setCellValueFactory(new PropertyValueFactory<Persona,String>("lastName"));
-	        // Se rellena la tabla con objetos de la clase Person
-	        table1.setItems(data);     
+	    private void initialize() {	
 	    }
-
 	    @FXML
 	    void abrirEditar(ActionEvent event) {
 	    	try {
@@ -67,7 +41,7 @@ public class MenuController {
 	    @FXML
 	    void abrirInicio(ActionEvent event) {
 	    	try {
-	    		//cerrarListado(null);
+	    		
 				// Cargamos el archivo Controles Dinámicos
 				FXMLLoader loader = new FXMLLoader();
 				loader.setLocation(MenuController.class.getResource("/layout1/inicio.fxml"));
@@ -83,7 +57,7 @@ public class MenuController {
 	    @FXML
 	    void abrirTutorial(ActionEvent event) {
 	    	try {
-	    		//cerrarListado(null);
+	    		
 				// Cargamos el archivo Controles Dinámicos
 				FXMLLoader loader = new FXMLLoader();
 				loader.setLocation(MenuController.class.getResource("/layout3/Tutorial.fxml"));
@@ -96,23 +70,6 @@ public class MenuController {
 			}
 	    }
 
-	    
-	   /* @FXML
-	    private void abrirFormulario(ActionEvent event) {
-	    	try {
-				// Cargamos el archivo Controles Dinámicos
-				FXMLLoader loader = new FXMLLoader();
-				loader.setLocation(MenuController.class.getResource("/basicoDinamico/ControlesDinamicos.fxml"));
-				GridPane listadoControles = (GridPane) loader.load();
-
-				// Se sitúa en el centro del diseño principal
-				rootLayout.setCenter(listadoControles);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-	    }*/
-	    
-	    
 	    @FXML
 	    private void cerrarListado(ActionEvent event) {    	
 	    	// Se elimina el contenido del nodo central
