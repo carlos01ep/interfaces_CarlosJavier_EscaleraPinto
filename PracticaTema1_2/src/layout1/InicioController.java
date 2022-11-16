@@ -19,7 +19,6 @@ import javafx.scene.layout.VBox;
 
 public class InicioController {
 	// Pantalla principal en la que se añade o quita contenido
-		private BorderPane archorPane;
 	//Dinamico
 		
 		

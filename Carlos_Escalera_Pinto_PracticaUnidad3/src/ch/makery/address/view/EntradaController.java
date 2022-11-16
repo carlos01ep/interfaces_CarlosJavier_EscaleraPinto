@@ -1,6 +1,7 @@
-package layout2;
+package ch.makery.address.view;
 
-import application.Persona;
+
+import ch.makery.address.model.Entrada;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -80,7 +81,7 @@ public class EntradaController {
 		
 		 // Controles de JavaFX a los que se añaden directamente los items 
     	// Ítems del ChoiceBox
-		ChoiceFormaDePago.getItems().addAll("Efectivo", "Tarjeta de credito", "Transferencia", "otro");      
+		ChoiceFormaDePago.getItems().addAll("Efectivo", "Tarjeta de credito", "Transferencia", "Otro");      
         
         // Ítems del ComboBox
 		comboNumEntradaAdulto.getItems().addAll(1,2,3,4,5,6,7,8,9);
