@@ -121,7 +121,7 @@
       </VBox>
       <HBox alignment="CENTER" prefHeight="100.0" GridPane.rowIndex="1">
          <children>
-            <Button mnemonicParsing="false" text="AÑADIR" />
+            <Button mnemonicParsing="false" onAction="#eventoAñadir" text="AÑADIR" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">

@@ -27,7 +27,7 @@ import javafx.stage.Stage;
 
 public class InicioController {
 	private Main mainApp;
-	private Stage dialogStage;
+
 	// Pantalla principal en la que se añade o quita contenido
 	//Dinamico
 	  @FXML
