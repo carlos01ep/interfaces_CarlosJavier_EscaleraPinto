@@ -82,7 +82,7 @@
                                  <children>
                                     <ImageView fitHeight="82.0" fitWidth="302.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../images/Tutorial1.png" />
+                                          <Image url="@../../../../images/Tutorial1.png" />
                                        </image>
                                     </ImageView>
                                  </children></VBox>
@@ -91,7 +91,7 @@
                            <children>
                               <ImageView fitHeight="127.0" fitWidth="171.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../images/Tutorial2.png" />
+                                    <Image url="@../../../../images/Tutorial2.png" />
                                  </image>
                               </ImageView>
                            </children></VBox>
@@ -99,7 +99,7 @@
                            <children>
                               <ImageView fitHeight="59.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../images/Tutorial3.png" />
+                                    <Image url="@../../../../images/Tutorial3.png" />
                                  </image>
                               </ImageView>
                            </children>
@@ -164,7 +164,7 @@
                                  <children>
                                     <ImageView fitHeight="130.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../images/Inicio1.png" />
+                                          <Image url="@../../../../images/Inicio1.png" />
                                        </image>
                                     </ImageView>
                                  </children></VBox>
@@ -173,12 +173,12 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../images/Inicio2.png" />
+                                    <Image url="@../../../../images/Inicio2.png" />
                                  </image>
                               </ImageView>
                               <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../images/Inicio3.png" />
+                                    <Image url="@../../../../images/Inicio3.png" />
                                  </image>
                               </ImageView>
                            </children>
@@ -187,7 +187,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../images/Inicio4.png" />
+                                    <Image url="@../../../../images/Inicio4.png" />
                                  </image>
                               </ImageView>
                            </children>
@@ -243,7 +243,7 @@
                                        <children>
                                           <ImageView fitHeight="76.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../images/AAEditar1.png" />
+                                                <Image url="@../../../../images/AAEditar1.png" />
                                              </image>
                                           </ImageView>
                                        </children></VBox>
@@ -253,12 +253,12 @@
                                  <children>
                                     <ImageView fitHeight="58.0" fitWidth="174.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../images/Editar2.jpg" />
+                                          <Image url="@../../../../images/Editar2.jpg" />
                                        </image>
                                     </ImageView>
                                     <ImageView fitHeight="42.0" fitWidth="189.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../images/Editar3.png" />
+                                          <Image url="@../../../../images/Editar3.png" />
                                        </image>
                                     </ImageView>
                                  </children></VBox>
@@ -286,7 +286,7 @@
                                              <children>
                                                 <ImageView fitHeight="70.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../images/Editar4.png" />
+                                                      <Image url="@../../../../images/Editar4.png" />
                                                    </image>
                                                 </ImageView>
                                              </children></VBox>
@@ -314,7 +314,7 @@
                                              <children>
                                                 <ImageView fitHeight="71.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../images/Editar5.png" />
+                                                      <Image url="@../../../../images/Editar5.png" />
                                                    </image>
                                                 </ImageView>
                                              </children></VBox>
@@ -342,7 +342,7 @@
                                              <children>
                                                 <ImageView fitHeight="73.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../images/Editar6.png" />
+                                                      <Image url="@../../../../images/Editar6.png" />
                                                    </image>
                                                 </ImageView>
                                              </children></VBox>
