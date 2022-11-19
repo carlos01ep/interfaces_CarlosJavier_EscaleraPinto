@@ -1,5 +1,7 @@
 package ch.makery.address.view;
 
+import java.util.Iterator;
+
 import ch.makery.address.Main;
 import ch.makery.address.model.Entrada;
 import javafx.collections.FXCollections;
@@ -58,11 +60,16 @@ public class EntradaController {
 	private TableView<Entrada> tableModificar;
 	@FXML
 	private ChoiceBox<String> ChoiceFormaDePago;
-    @FXML
-    void eventoAñadir(ActionEvent event) {
-    	mainApp.getPersonData().add(new Entrada("Carlos", "Escalera", "01/02/2022", "01/02/2022", 1, 1, 5, 100.9, "Tarjeta"));
-    	mainApp.showInicio();
-    }
+
+	@FXML
+	void eventoAñadir(ActionEvent event) {
+		// añade un nuevo registro
+		mainApp.getPersonData()
+				.add(new Entrada("Carlos", "Escalera", "01/02/2022", "01/02/2022", 1, 1, 5, 100.9, "Tarjeta"));
+		// rediracciona a la pantalla de inicio
+		mainApp.showInicio();
+	}
+
 	// Lista auxiliar para TableView
 	private ObservableList<Entrada> data = FXCollections.observableArrayList(
 			new Entrada("Jacob", "Smith", "01/02/2022", "01/02/2022", 1, 1, 5, 100.9, "Tarjeta"),
@@ -111,5 +118,42 @@ public class EntradaController {
 		NumAdultos.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
 		NumNiños.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
 
+		tableModificar.getSelectionModel().selectedItemProperty()
+				.addListener((observable, oldValue, newValue) -> borrarCompra(newValue));
+	}
+
+	private void borrarCompra(Entrada entrada) {
+		if (entrada != null) {
+			// Si el campo contiene datos, entonces se rellena la información
+			/*
+			 * Nombre.setText(entrada.getSspNombre());
+			 * Apellidos.setText(entrada.getSspApellido());
+			 * FechaEntrada.setText(entrada.getSspFechaEntrada());
+			 * FormaDePago.setText(entrada.getSspFechaCompra());
+			 * Descuento.setText(""+entrada.getSipDescuento());
+			 * NumAdultos.setText(""+entrada.getSipNumEntradasAdulto());
+			 * NumNiños.setText(""+entrada.getSipNumEntradasInfantil());
+			 */
+			Nombre.setText("");
+			Apellidos.setText("");
+			FechaEntrada.setText("");
+			FormaDePago.setText("");
+			Descuento.setText("");
+			NumAdultos.setText("");
+			NumNiños.setText("");
+			if (mainApp.getPersonData().contains(entrada)) {
+				mainApp.getPersonData().remove(entrada);
+			}
+
+		} else {
+			// Person is null, remove all the text.
+			Nombre.setText("");
+			Apellidos.setText("");
+			FechaEntrada.setText("");
+			FormaDePago.setText("");
+			Descuento.setText("");
+			NumAdultos.setText("");
+			NumNiños.setText("");
+		}
 	}
 }

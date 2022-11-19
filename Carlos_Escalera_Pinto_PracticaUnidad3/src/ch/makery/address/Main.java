@@ -7,6 +7,7 @@ import ch.makery.address.model.Entrada;
 import ch.makery.address.model.Person;
 import ch.makery.address.view.EntradaController;
 import ch.makery.address.view.InicioController;
+import ch.makery.address.view.TutorialController;
 import ch.makery.address.view.MenuController;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -16,6 +17,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
@@ -30,7 +32,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("AddressApp");
+		this.primaryStage.setTitle("Parque de atracciones");
 			
 		initRootLayout();
 		showInicio();
@@ -50,10 +52,33 @@ public class Main extends Application {
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);				
 			primaryStage.show();
+			// Damos al controlador acceso a la aplicaicón principal
+	        MenuController controller = loader.getController();
+	        controller.setMainApp(this);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
+	
+	
+	public void showTutorial() {
+		try {
+			// Cargamos el archivo PersonOverview
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Main.class.getResource("view/Tutorial.fxml"));
+			VBox tutorialLayout = (VBox) loader.load();
+
+			// Se sitúa en el centro del diseño principal
+			rootLayout.setCenter(tutorialLayout);
+			
+			// Damos al controlador acceso a la aplicaicón principal
+	        TutorialController controller = loader.getController();
+	        controller.setMainApp(this);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public void showEditar() {
 		try {
 			// Cargamos el archivo PersonOverview

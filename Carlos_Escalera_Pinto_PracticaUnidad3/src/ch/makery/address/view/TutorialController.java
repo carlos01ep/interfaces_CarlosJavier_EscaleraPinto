@@ -1,5 +1,6 @@
 package ch.makery.address.view;
 
+import ch.makery.address.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -16,10 +17,13 @@ import javafx.scene.control.cell.TextFieldListCell;
 import javafx.scene.control.cell.TextFieldTreeCell;
 
 public class TutorialController {
-
+	private Main mainApp;
     @FXML
     private void initialize() {   
        
     }
-    
+    public void setMainApp(Main mainApp) {
+		this.mainApp = mainApp;
+
+	}
 }

@@ -2,6 +2,7 @@ package ch.makery.address.view;
 
 import java.io.IOException;
 
+import ch.makery.address.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,70 +20,34 @@ import javafx.scene.layout.VBox;
 //import layout2.Person;
 
 public class MenuController {
-	
+	private Main mainApp;
 	// Pantalla principal en la que se añade o quita contenido
-		private BorderPane rootLayout;
-	    @FXML
-	    private void initialize() {	
-	    }
-	    @FXML
-	    public void abrirEditar(ActionEvent event) {
-	    	try {
-				// Cargamos el archivo Controles Dinámicos
-				FXMLLoader loader = new FXMLLoader();
-				loader.setLocation(MenuController.class.getResource("./Editar.fxml"));
-				GridPane listadoControles = (GridPane) loader.load();
+	//private BorderPane rootLayout;
 
-				// Se sitúa en el centro del diseño principal
-				rootLayout.setCenter(listadoControles);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-	    }
-	    @FXML
-	    public void abrirInicio(ActionEvent event) {
-	    	try {
-				// Cargamos el archivo Controles Dinámicos
-				FXMLLoader loader = new FXMLLoader();
-				loader.setLocation(MenuController.class.getResource("./inicio.fxml"));
-				AnchorPane listadoControles = (AnchorPane) loader.load();
-				// Se sitúa en el centro del diseño principal
-				rootLayout.setCenter(listadoControles);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-	    }
-	    @FXML
-	    public void abrirTutorial(ActionEvent event) {
-	    	try {
-	    		
-				// Cargamos el archivo Controles Dinámicos
-				FXMLLoader loader = new FXMLLoader();
-				loader.setLocation(MenuController.class.getResource("./Tutorial.fxml"));
-				VBox listadoControles = (VBox) loader.load();
-
-				// Se sitúa en el centro del diseño principal
-				rootLayout.setCenter(listadoControles);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-	    }
-
-	    @FXML
-	    public void cerrarListado(ActionEvent event) {    	
-	    	// Se elimina el contenido del nodo central
-	    	rootLayout.setCenter(null);	
-	    }
-
-		public BorderPane getRootLayout() {
-			return rootLayout;
-		}
-
-		public void setRootLayout(BorderPane rootLayout) {
-			this.rootLayout = rootLayout;
-		}	
+	@FXML
+	private void initialize() {
 		
-	
-	    
+	}
+
+	@FXML
+	public void abrirEditar(ActionEvent event) {
+		this.mainApp.showEditar();
+	}
+
+	@FXML
+	public void abrirInicio(ActionEvent event) {
+		this.mainApp.showInicio();
+	}
+
+	@FXML
+	public void abrirTutorial(ActionEvent event) {
+		this.mainApp.showTutorial();
+	}
+
+
+	public void setMainApp(Main mainApp) {
+		this.mainApp = mainApp;
+
+	}
 
 }
