@@ -9,9 +9,11 @@ import ch.makery.address.view.EntradaController;
 import ch.makery.address.view.InicioController;
 import ch.makery.address.view.TutorialController;
 import ch.makery.address.view.MenuController;
+import ch.makery.address.view.EntradaEditDialogController;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -128,4 +130,34 @@ public class Main extends Application {
 		personData.add(new Entrada("Martin", "Mueller","fecha1","fecha1",2,3,5,25.0,"Trjeta"));
 		
 	}
+	public boolean showEntradaEditDialog(Entrada entrada) {
+	    try {
+	        // Cargamos el diseño del diálogo desde un XML
+	        FXMLLoader loader = new FXMLLoader();
+	        loader.setLocation(Main.class.getResource("view/EntradaEditDialog.fxml"));
+	        AnchorPane page = (AnchorPane) loader.load();
+
+	        // Se crea un nuevo Stage para mostrar el diálogo
+	        Stage dialogStage = new Stage();
+	        dialogStage.setTitle("Editar Entrada");
+	        dialogStage.initModality(Modality.WINDOW_MODAL);
+	        dialogStage.initOwner(primaryStage);
+	        Scene scene = new Scene(page);
+	        dialogStage.setScene(scene);
+
+	        // Carga la Entrada en el controlador
+	        EntradaEditDialogController controller = loader.getController();
+	        controller.setDialogStage(dialogStage);
+	        controller.setEntrada(entrada);
+
+	        // Muestra el diálogo y no continúa el código hasta que lo cierra el usuario
+	        dialogStage.showAndWait();
+
+	        return controller.isOkClicked();
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	        return false;
+	    }
+	}
+	
 }

@@ -96,7 +96,7 @@ public class InicioController {
 	        //table1.setItems(data);    
 		    
 		    table1.getSelectionModel().selectedItemProperty().addListener(
-	                (observable, oldValue, newValue) -> showPersonDetails(newValue)); 
+	                (observable, oldValue, newValue) -> showEntradaDetails(newValue)); 
 	    }
 	    public void setMainApp(Main mainApp) {
 	        this.mainApp = mainApp;
@@ -106,7 +106,7 @@ public class InicioController {
 	        // TODO Versión con map
 	        //personTable.setItems(this.mainApp.getMapData()); 
 	    }
-	    private void showPersonDetails(Entrada entrada) {
+	    private void showEntradaDetails(Entrada entrada) {
 	        if (entrada != null) {
 	        	// Si el campo contiene datos, entonces se rellena la información
 	        	labelApellido.setText(entrada.getSspApellido());
@@ -116,7 +116,7 @@ public class InicioController {
 	        	labelFormaPago.setText(entrada.getSspFormaDePago());
 	        	labelNombre.setText(entrada.getSspNombre());
 	        	labelNumAdulto.setText(""+entrada.getSipNumEntradasAdulto());
-	        	labelNumAdulto.setText(""+entrada.getSipNumEntradasInfantil());
+	        	labelNumInfantil.setText(""+entrada.getSipNumEntradasInfantil());
 	        	labelPrecio.setText(""+ entrada.getSdpPrecioTotal());
 
 	        } else {
