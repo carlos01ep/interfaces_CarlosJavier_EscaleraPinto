@@ -5,6 +5,7 @@ import java.io.IOException;
 import ch.makery.address.model.Persona;
 import ch.makery.address.model.Entrada;
 import ch.makery.address.model.Person;
+import ch.makery.address.view.EntradaController;
 import ch.makery.address.view.InicioController;
 import ch.makery.address.view.MenuController;
 import javafx.application.Application;
@@ -14,6 +15,7 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
@@ -52,15 +54,32 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
+	public void showEditar() {
+		try {
+			// Cargamos el archivo PersonOverview
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Main.class.getResource("view/Editar.fxml"));
+			GridPane inicioLayout = (GridPane) loader.load();
+
+			// Se sitúa en el centro del diseño principal
+			rootLayout.setCenter(inicioLayout);
+			
+			// Damos al controlador acceso a la aplicaicón principal
+	        EntradaController controller = loader.getController();
+	        controller.setMainApp(this);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	public void showInicio() {
 		try {
 			// Cargamos el archivo PersonOverview
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Main.class.getResource("view/inicio.fxml"));
-			AnchorPane personOverview = (AnchorPane) loader.load();
+			AnchorPane inicioLayout = (AnchorPane) loader.load();
 
 			// Se sitúa en el centro del diseño principal
-			rootLayout.setCenter(personOverview);
+			rootLayout.setCenter(inicioLayout);
 			
 			// Damos al controlador acceso a la aplicaicón principal
 	        InicioController controller = loader.getController();

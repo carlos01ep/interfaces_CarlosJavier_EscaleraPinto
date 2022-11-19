@@ -12,6 +12,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
@@ -22,10 +23,11 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 //import layout2.Person;
+import javafx.stage.Stage;
 
 public class InicioController {
 	private Main mainApp;
-	
+	private Stage dialogStage;
 	// Pantalla principal en la que se añade o quita contenido
 	//Dinamico
 	  @FXML
@@ -64,6 +66,18 @@ public class InicioController {
 
 	    @FXML
 	    private TableView<Entrada> table1;
+	    
+	    @FXML
+	    void botonEditar(ActionEvent event) {
+	    	mainApp.showEditar();
+	    }
+
+	    @FXML
+	    void botonSalir(ActionEvent event) {
+	    	Node source = (Node) event.getSource();
+	        Stage stage = (Stage) source.getScene().getWindow();
+	        stage.close();
+	    }
 	    
 	    // Lista auxiliar para TableView
 	    private ObservableList<Persona> data = FXCollections.observableArrayList(

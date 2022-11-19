@@ -19,6 +19,7 @@ import javafx.scene.layout.VBox;
 //import layout2.Person;
 
 public class MenuController {
+	
 	// Pantalla principal en la que se añade o quita contenido
 		private BorderPane rootLayout;
 	    @FXML

@@ -19,7 +19,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.InicioController">
+<AnchorPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="layout1.InicioController">
    <children>
       <VBox layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -38,14 +38,14 @@
                      <children>
                         <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../images/Logo1.png" />
+                              <Image url="@../images/Logo1.png" />
                            </image>
                         </ImageView>
                      </children>
                   </StackPane>
                </children>
             </HBox>
-            <SplitPane dividerPositions="0.5010016025641025" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <SplitPane dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                <items>
                   <AnchorPane>
                      <children>
@@ -109,24 +109,24 @@
                                     <Label text="Fecha de entrada" GridPane.rowIndex="3" />
                                     <Label text="Número de entradas" GridPane.rowIndex="4" />
                                     <Label text="Descuento" GridPane.rowIndex="5" />
+                                    <Label GridPane.rowIndex="6" />
                                     <Label text="Precio Total Entradas" GridPane.rowIndex="6" />
                                     <Label text="Forma de pago" GridPane.rowIndex="7" />
-                                    <Label fx:id="labelNombre" text="nobmre" GridPane.columnIndex="1" />
-                                    <Label fx:id="labelApellido" text="apellido" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                    <Label fx:id="labelFecha" text="fecha" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                    <Label fx:id="labelDescuento" text="descuento" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                    <Label fx:id="labelPrecio" text="precio" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                                    <Label fx:id="labelFormaPago" text="formaPago" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                    <Label text="Jacob" GridPane.columnIndex="1" />
+                                    <Label text="Smith" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label text="12/12/32" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Label text="-5%" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    <Label text="100.5" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                    <Label text="Tarjeta" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                                     <HBox alignment="CENTER_LEFT" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                        <children>
                                           <Label text="Adulto:" />
-                                          <Label fx:id="labelNumAdulto" text="numAdulto" />
+                                          <Label text="2 " />
                                           <Label text="Infantil:" />
-                                          <Label fx:id="labelNumInfantil" text="numInfantil" />
+                                          <Label text="3 " />
                                        </children>
                                     </HBox>
-                                    <Label GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                    <Label fx:id="labelFechaEntrada" text="fechaEntrada" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Label text="12/12/32" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                                  </children>
                               </GridPane>
                            </children>
@@ -140,12 +140,12 @@
             </SplitPane>
             <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#botonEditar" prefHeight="30.0" prefWidth="100.0" text="EDITAR" textAlignment="CENTER">
+                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="EDITAR" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#botonSalir" prefHeight="30.0" prefWidth="100.0" text="SALIR" textAlignment="CENTER">
+                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="SALIR" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>

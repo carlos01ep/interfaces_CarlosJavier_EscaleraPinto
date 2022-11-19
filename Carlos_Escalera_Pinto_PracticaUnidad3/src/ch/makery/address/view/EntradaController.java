@@ -1,6 +1,7 @@
 package ch.makery.address.view;
 
 
+import ch.makery.address.Main;
 import ch.makery.address.model.Entrada;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,6 +22,7 @@ import javafx.scene.control.cell.TextFieldTreeCell;
 import javafx.util.converter.IntegerStringConverter;
 
 public class EntradaController {
+	private Main mainApp;
 
 	@FXML
 	private TableColumn<Entrada, String> Apellidos;
@@ -64,7 +66,16 @@ public class EntradaController {
 	    	    new Entrada("Emma", "Jones", "01/02/2022","01/02/2022",1,1,5,100.9,"Tarjeta"),
 	    	    new Entrada("Michael", "Brown", "01/02/2022","01/02/2022",1,1,5,100.9,"Tarjeta")
 	    	);
-	@FXML
+	    public void setMainApp(Main mainApp) {
+	        this.mainApp = mainApp;
+
+	        tableModificar.setItems(this.mainApp.getPersonData());
+	               
+	        // TODO Versión con map
+	        //personTable.setItems(this.mainApp.getMapData()); 
+	    }
+	    
+	    @FXML
 	private void initialize() {
 		// Asociamos cada columna del TableView a una propiedad de la clase Person 
 		Nombre.setCellValueFactory(new PropertyValueFactory<Entrada,String>("sspNombre"));
