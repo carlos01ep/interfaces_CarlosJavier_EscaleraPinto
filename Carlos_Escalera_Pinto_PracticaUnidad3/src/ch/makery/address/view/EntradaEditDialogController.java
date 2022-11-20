@@ -105,38 +105,48 @@ public class EntradaEditDialogController {
      * @return true si los campos son v�lidos
      */
     private boolean isInputValid() {
-        /*String errorMessage = "";
+        String errorMessage = "";
 
-        if (firstNameField.getText() == null || firstNameField.getText().length() == 0) {
-            errorMessage += "El campo first name est� vac�o\n"; 
+        if (Nombre.getText() == null || Nombre.getText().length() == 0) {
+            errorMessage += "El campo Nombre está vacío\n"; 
         }
-        if (lastNameField.getText() == null || lastNameField.getText().length() == 0) {
-            errorMessage += "El campo last name est� vac�o\n"; 
+        if (Apellidos.getText() == null || Apellidos.getText().length() == 0) {
+            errorMessage += "El campo Apellidos  está vacío\n"; 
         }
-        if (streetField.getText() == null || streetField.getText().length() == 0) {
-            errorMessage += "El campo street est� vac�o\n"; 
+        if (FechaEntrada.getText() == null || FechaEntrada.getText().length() == 0) {
+            errorMessage += "El campo FechaEntrada está vacío\n"; 
         }
-
-        if (postalCodeField.getText() == null || postalCodeField.getText().length() == 0) {
-            errorMessage += "El campo postal code est� vac�o\n"; 
+        if (FormaDePago.getText() == null || FormaDePago.getText().length() == 0) {
+            errorMessage += "El campo FormaDePago está vacío\n"; 
+        }
+        if (Descuento.getText() == null || Descuento.getText().length() == 0) {
+            errorMessage += "El campo Descuento está vacío\n"; 
         } else {
             // Se intenta convertir el c�digo postal en entero y si da un error se muestra un mensaje
             try {
-                Integer.parseInt(postalCodeField.getText());
+                Integer.parseInt(Descuento.getText());
             } catch (NumberFormatException e) {
-                errorMessage += "Postal code no v�lido. Debe ser un n�mero entero\n"; 
+                errorMessage += "Descuento no válido. Debe ser un número entero\n"; 
             }
         }
-
-        if (cityField.getText() == null || cityField.getText().length() == 0) {
-            errorMessage += "El campo city est� vac�o\n"; 
-        }
-
-        if (birthdayField.getText() == null || birthdayField.getText().length() == 0) {
-            errorMessage += "El campo birthday est� vac�o\n";
+        if (NumAdultos.getText() == null || NumAdultos.getText().length() == 0) {
+            errorMessage += "El campo Número Adultos está vacío\n"; 
         } else {
-            if (!DateUtil.validDate(birthdayField.getText())) {
-                errorMessage += "El campo birthday no es v�lido. Usa el formato dd/mm/yyyy\n";
+            // Se intenta convertir el c�digo postal en entero y si da un error se muestra un mensaje
+            try {
+                Integer.parseInt(NumAdultos.getText());
+            } catch (NumberFormatException e) {
+                errorMessage += "Número Adultos no válido. Debe ser un número entero\n"; 
+            }
+        }
+        if (NumNiños.getText() == null || NumNiños.getText().length() == 0) {
+            errorMessage += "El Número Niños está vacío\n"; 
+        } else {
+            // Se intenta convertir el c�digo postal en entero y si da un error se muestra un mensaje
+            try {
+                Integer.parseInt(NumNiños.getText());
+            } catch (NumberFormatException e) {
+                errorMessage += "Número Niños no válido. Debe ser un número entero\n"; 
             }
         }
 
@@ -152,9 +162,7 @@ public class EntradaEditDialogController {
     		
     		errorAlert.showAndWait();
             return false; }
-            */
-   
-    	return true;
+
     }
     
     /**

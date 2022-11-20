@@ -110,9 +110,9 @@ public class EntradaController {
         	// Se muestra un alert si no se puede eliminar la fila
     		Alert errorAlert = new Alert(AlertType.ERROR);
         	
-    		errorAlert.setTitle("Error al editar persona");
+    		errorAlert.setTitle("Error al editar Entrada");
     		errorAlert.setHeaderText("No se ha seleccionado ninguna fila");
-    		errorAlert.setContentText("Por favor, selecciona una persona en la tabla");
+    		errorAlert.setContentText("Por favor, selecciona una Entrada en la tabla");
     		
     		errorAlert.showAndWait();
         }
