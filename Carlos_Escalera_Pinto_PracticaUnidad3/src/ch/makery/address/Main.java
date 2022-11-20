@@ -5,7 +5,7 @@ import java.io.IOException;
 import ch.makery.address.model.Persona;
 import ch.makery.address.model.Entrada;
 import ch.makery.address.model.Person;
-import ch.makery.address.view.EntradaController;
+import ch.makery.address.view.MantenimientoController;
 import ch.makery.address.view.InicioController;
 import ch.makery.address.view.TutorialController;
 import ch.makery.address.view.MenuController;
@@ -47,7 +47,7 @@ public class Main extends Application {
 		try {
 			// Carga el XML con el diseño principal
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("view/Menu.fxml"));
+			loader.setLocation(Main.class.getResource("view/PantallaMenu.fxml"));
 			rootLayout = (BorderPane) loader.load();
 
 			// Se añade el diseño principal a la escena
@@ -67,7 +67,7 @@ public class Main extends Application {
 		try {
 			// Cargamos el archivo PersonOverview
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("view/Tutorial.fxml"));
+			loader.setLocation(Main.class.getResource("view/Pantalla3Tutorial.fxml"));
 			VBox tutorialLayout = (VBox) loader.load();
 
 			// Se sitúa en el centro del diseño principal
@@ -85,14 +85,14 @@ public class Main extends Application {
 		try {
 			// Cargamos el archivo PersonOverview
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("view/Editar.fxml"));
+			loader.setLocation(Main.class.getResource("view/Pantalla2Mantenimiento.fxml"));
 			GridPane inicioLayout = (GridPane) loader.load();
 
 			// Se sitúa en el centro del diseño principal
 			rootLayout.setCenter(inicioLayout);
 			
 			// Damos al controlador acceso a la aplicaicón principal
-	        EntradaController controller = loader.getController();
+	        MantenimientoController controller = loader.getController();
 	        controller.setMainApp(this);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -102,7 +102,7 @@ public class Main extends Application {
 		try {
 			// Cargamos el archivo PersonOverview
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("view/inicio.fxml"));
+			loader.setLocation(Main.class.getResource("view/Pantalla1Inicio.fxml"));
 			AnchorPane inicioLayout = (AnchorPane) loader.load();
 
 			// Se sitúa en el centro del diseño principal
@@ -134,7 +134,7 @@ public class Main extends Application {
 	    try {
 	        // Cargamos el diseño del diálogo desde un XML
 	        FXMLLoader loader = new FXMLLoader();
-	        loader.setLocation(Main.class.getResource("view/EntradaEditDialog.fxml"));
+	        loader.setLocation(Main.class.getResource("view/PantallaEntradaEditDialog.fxml"));
 	        AnchorPane page = (AnchorPane) loader.load();
 
 	        // Se crea un nuevo Stage para mostrar el diálogo

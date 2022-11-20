@@ -140,7 +140,7 @@
             </SplitPane>
             <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#botonEditar" prefHeight="30.0" prefWidth="100.0" text="EDITAR" textAlignment="CENTER">
+                  <Button mnemonicParsing="false" onAction="#botonEditar" prefHeight="30.0" prefWidth="138.0" text="MANTENIMIENTO" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
