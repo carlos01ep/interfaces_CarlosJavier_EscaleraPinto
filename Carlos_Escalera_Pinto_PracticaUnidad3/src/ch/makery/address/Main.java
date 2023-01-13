@@ -23,6 +23,7 @@ import javafx.collections.ObservableList;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -156,13 +157,19 @@ public class Main extends Application {
 		personData.add(new Entrada("Martin", "Mueller",fecha1,fecha1,2,3,5,25.0,"Trjeta"));
 		
 	}
+	public ObservableList<PieChart.Data> loadPieData(){
+		// Rellenamos los datos del gráfico
+		ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
+                new PieChart.Data("zona familiar", 5),
+                new PieChart.Data("Zona infantil", 6),
+                new PieChart.Data("Zona acuatica", 8),
+                new PieChart.Data("Zona de atracciones mecanicas", 6),
+                new PieChart.Data("Zona educativa", 5),
+                new PieChart.Data("Zon de tranquilidad", 4));
+		
+		return pieChartData;
+	}
 	
-	/*zona familiar 5
-	zona infantil 6
-	zona acuatica 8
-	zona de atracciones mecanicas 6
-	zona educativa 5
-	zon de tranquilidad 4*/
 	
 	public ObservableList<XYChart.Series<String, Number>> loadDist1(){
 		List<XYChart.Series<String, Number>> list = new ArrayList<XYChart.Series<String,Number>>();
@@ -199,6 +206,47 @@ public class Main extends Application {
 		series2.getData().add(new XYChart.Data<String, Number>("Octubre", 63));
 		series2.getData().add(new XYChart.Data<String, Number>("Noviembre", 56));
 		series2.getData().add(new XYChart.Data<String, Number>("Diciembre", 80));
+		
+		list.add(series1);
+		list.add(series2);
+		
+        return FXCollections.observableArrayList(list);
+	}
+	public ObservableList<XYChart.Series<String, Number>> loadDist2(){
+		List<XYChart.Series<String, Number>> list = new ArrayList<XYChart.Series<String,Number>>();
+	
+		// Se crean dos series con datos
+		XYChart.Series<String, Number> series1 = new XYChart.Series<String, Number>();
+		series1.setName("Mantenimiento");
+		series1.getData().add(new XYChart.Data<String, Number>("Enero", 6000));
+		series1.getData().add(new XYChart.Data<String, Number>("Febrero", 5000));
+		series1.getData().add(new XYChart.Data<String, Number>("Marzo", 4500));
+		series1.getData().add(new XYChart.Data<String, Number>("Abril", 7500));
+		series1.getData().add(new XYChart.Data<String, Number>("Mayo", 8500));
+		series1.getData().add(new XYChart.Data<String, Number>("Junio", 9600));
+		series1.getData().add(new XYChart.Data<String, Number>("Julio", 9400));
+		series1.getData().add(new XYChart.Data<String, Number>("Agosto", 11100));
+		series1.getData().add(new XYChart.Data<String, Number>("Septiembre", 4200));
+		series1.getData().add(new XYChart.Data<String, Number>("Octubre", 4600));
+		series1.getData().add(new XYChart.Data<String, Number>("Noviembre", 5300));
+		series1.getData().add(new XYChart.Data<String, Number>("Diciembre", 6700));
+
+        
+		// Se crean dos series con datos
+		XYChart.Series<String, Number> series2 = new XYChart.Series<String, Number>();
+		series2.setName("Suministros");
+		series2.getData().add(new XYChart.Data<String, Number>("Enero", 960));
+		series2.getData().add(new XYChart.Data<String, Number>("Febrero", 840));
+		series2.getData().add(new XYChart.Data<String, Number>("Marzo", 1170));
+		series2.getData().add(new XYChart.Data<String, Number>("Abril", 900));
+		series2.getData().add(new XYChart.Data<String, Number>("Mayo", 860));
+		series2.getData().add(new XYChart.Data<String, Number>("Junio", 1170));
+		series2.getData().add(new XYChart.Data<String, Number>("Julio", 1240));
+		series2.getData().add(new XYChart.Data<String, Number>("Agosto", 1640));
+		series2.getData().add(new XYChart.Data<String, Number>("Septiembre", 940));
+		series2.getData().add(new XYChart.Data<String, Number>("Octubre", 830));
+		series2.getData().add(new XYChart.Data<String, Number>("Noviembre", 860));
+		series2.getData().add(new XYChart.Data<String, Number>("Diciembre", 1700));
 		
 		list.add(series1);
 		list.add(series2);

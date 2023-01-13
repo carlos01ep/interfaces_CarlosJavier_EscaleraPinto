@@ -74,5 +74,37 @@ public class GraficosController {
 		this.mainApp = mainApp;
 
 	}
+	 @FXML
+	    private void botonPieChart(ActionEvent event) {
+	    	try {
+	    		// Se crea un nuevo diálogo para mostar el gráfico
+	    		crearDialogo("/graficos/PieChart.fxml");
+
+		        // Se pasa como parámetro el listado de calificaciones
+		        VentanaGraficosController controller = this.loader.getController();
+		        controller.setPieData(mainApp.loadPieData());
+		        controller.initPieChart();
+		        
+		        this.dialogStage.show();
+		    } catch (IOException e) {
+		        e.printStackTrace();
+		    }    	
+	    }
+	 @FXML
+	    private void botonStackedBarChart(ActionEvent event) {
+	    	try {
+	    		// Se crea un nuevo diálogo para mostar el gráfico
+	    		crearDialogo("/graficos/StackedBarChart.fxml");
+
+		        // Se pasa como parámetro el listado de calificaciones
+		        VentanaGraficosController controller = this.loader.getController();
+		        controller.setDist1(mainApp.loadDist2());
+		        controller.initStackedBarChart();
+		        
+		        this.dialogStage.show();
+		    } catch (IOException e) {
+		        e.printStackTrace();
+		    }
+	    }
 
 }

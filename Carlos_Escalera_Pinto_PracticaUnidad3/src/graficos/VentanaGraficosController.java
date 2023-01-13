@@ -16,14 +16,18 @@ public class VentanaGraficosController {
 	// Variables para representar los datos de los diferentes gr�ficos
 	
 	private ObservableList<XYChart.Series<String, Number>> dist1;
-	
-	
-	
+	private ObservableList<PieChart.Data> pieData;
+	public void setPieData(ObservableList<PieChart.Data> pieData) {
+		this.pieData = pieData;
+	}
+	@FXML
+	private PieChart pieChart;
 	
 	@FXML
     private LineChart<String, Number> lineChart;
 	
-	
+	@FXML
+    private StackedBarChart<String, Number> stackedBarChart;
 	
     @FXML
 	private void initialize() {
@@ -36,7 +40,19 @@ public class VentanaGraficosController {
     public void initLineChart() {
     	lineChart.setData(this.dist1);
     }
-    
+    // Método para inicializar el PieChart
+    public void initPieChart() {
+		pieChart.setData(pieData);
+		
+		// Se muestra en cada etiqueta el valor
+		for (final PieChart.Data data : pieChart.getData()) {
+		    data.setName(data.getName() + "=" + data.getPieValue());
+		}
+    }
+ // Método para inicializar el StackedBarChart
+    public void initStackedBarChart() {
+    	stackedBarChart.setData(this.dist1);
+    }
     
 	public ObservableList<XYChart.Series<String, Number>> getDist1() {
 		return dist1;
