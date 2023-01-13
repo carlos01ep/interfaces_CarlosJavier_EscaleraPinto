@@ -2,6 +2,10 @@ package ch.makery.address;
 	
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 import ch.makery.address.model.Persona;
 import ch.makery.address.model.Entrada;
 import ch.makery.address.model.Person;
@@ -10,12 +14,16 @@ import ch.makery.address.view.InicioController;
 import ch.makery.address.view.TutorialController;
 import ch.makery.address.view.MenuController;
 import ch.makery.address.view.EntradaEditDialogController;
+import ch.makery.address.view.GraficosController;
 import javafx.application.Application;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.chart.XYChart;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -35,7 +43,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("Parque de atracciones");
-			
+		
 		initRootLayout();
 		showInicio();
 	}
@@ -115,21 +123,89 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
+	public void showGraficos() {
+		try {
+			// Cargamos el archivo PersonOverview
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Main.class.getResource("view/Pantalla4Graficos.fxml"));
+			BorderPane inicioLayout = (BorderPane) loader.load();
+
+			// Se sitúa en el centro del diseño principal
+			rootLayout.setCenter(inicioLayout);
+			
+			// Damos al controlador acceso a la aplicaicón principal
+	        GraficosController controller = loader.getController();
+	        controller.setMainApp(this);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	public ObservableList<Entrada> getPersonData() {
 		return personData;
 	}
 	public Main() {
-		personData.add(new Entrada("Hans", "Muster","fecha1","fecha1",2,3,5,25.0,"Trjeta"));
-		personData.add(new Entrada("Ruth", "Mueller","fecha1","fecha1",2,3,5,25.0,"Trjeta"));
-		personData.add(new Entrada("Heinz", "Kurz","fecha1","fecha1",2,3,5,25.0,"Trjeta"));
-		personData.add(new Entrada("Cornelia", "Meier","fecha1","fecha1",2,3,5,25.0,"Trjeta"));
-		personData.add(new Entrada("Werner", "Meyer","fecha1","fecha1",2,3,5,25.0,"Trjeta"));
-		personData.add(new Entrada("Lydia", "Kunz","fecha1","fecha1",2,3,5,25.0,"Trjeta"));
-		personData.add(new Entrada("Anna", "Best","fecha1","fecha1",2,3,5,25.0,"Trjeta"));
-		personData.add(new Entrada("Stefan", "Meier","fecha1","fecha1",2,3,5,25.0,"Trjeta"));
-		personData.add(new Entrada("Martin", "Mueller","fecha1","fecha1",2,3,5,25.0,"Trjeta"));
+		SimpleObjectProperty<LocalDate> fecha1 =  new SimpleObjectProperty<LocalDate>(LocalDate.of(1999, 2, 21));
+		personData.add(new Entrada("Hans", "Muster",fecha1,fecha1,2,3,5,25.0,"Trjeta"));
+		personData.add(new Entrada("Ruth", "Mueller",fecha1,fecha1,2,3,5,25.0,"Trjeta"));
+		personData.add(new Entrada("Heinz", "Kurz",fecha1,fecha1,2,3,5,25.0,"Trjeta"));
+		personData.add(new Entrada("Cornelia", "Meier",fecha1,fecha1,2,3,5,25.0,"Trjeta"));
+		personData.add(new Entrada("Werner", "Meyer",fecha1,fecha1,2,3,5,25.0,"Trjeta"));
+		personData.add(new Entrada("Lydia", "Kunz",fecha1,fecha1,2,3,5,25.0,"Trjeta"));
+		personData.add(new Entrada("Anna", "Best",fecha1,fecha1,2,3,5,25.0,"Trjeta"));
+		personData.add(new Entrada("Stefan", "Meier",fecha1,fecha1,2,3,5,25.0,"Trjeta"));
+		personData.add(new Entrada("Martin", "Mueller",fecha1,fecha1,2,3,5,25.0,"Trjeta"));
 		
 	}
+	
+	/*zona familiar 5
+	zona infantil 6
+	zona acuatica 8
+	zona de atracciones mecanicas 6
+	zona educativa 5
+	zon de tranquilidad 4*/
+	
+	public ObservableList<XYChart.Series<String, Number>> loadDist1(){
+		List<XYChart.Series<String, Number>> list = new ArrayList<XYChart.Series<String,Number>>();
+	
+		// Se crean dos series con datos
+		XYChart.Series<String, Number> series1 = new XYChart.Series<String, Number>();
+		series1.setName("Entradas Adulto");
+		series1.getData().add(new XYChart.Data<String, Number>("Enero", 60));
+		series1.getData().add(new XYChart.Data<String, Number>("Febrero", 50));
+		series1.getData().add(new XYChart.Data<String, Number>("Marzo", 45));
+		series1.getData().add(new XYChart.Data<String, Number>("Abril", 75));
+		series1.getData().add(new XYChart.Data<String, Number>("Mayo", 85));
+		series1.getData().add(new XYChart.Data<String, Number>("Junio", 96));
+		series1.getData().add(new XYChart.Data<String, Number>("Julio", 94));
+		series1.getData().add(new XYChart.Data<String, Number>("Agosto", 111));
+		series1.getData().add(new XYChart.Data<String, Number>("Septiembre", 42));
+		series1.getData().add(new XYChart.Data<String, Number>("Octubre", 46));
+		series1.getData().add(new XYChart.Data<String, Number>("Noviembre", 53));
+		series1.getData().add(new XYChart.Data<String, Number>("Diciembre", 67));
+
+        
+		// Se crean dos series con datos
+		XYChart.Series<String, Number> series2 = new XYChart.Series<String, Number>();
+		series2.setName("Entradas Infantil");
+		series2.getData().add(new XYChart.Data<String, Number>("Enero", 76));
+		series2.getData().add(new XYChart.Data<String, Number>("Febrero", 54));
+		series2.getData().add(new XYChart.Data<String, Number>("Marzo", 67));
+		series2.getData().add(new XYChart.Data<String, Number>("Abril", 70));
+		series2.getData().add(new XYChart.Data<String, Number>("Mayo", 56));
+		series2.getData().add(new XYChart.Data<String, Number>("Junio", 97));
+		series2.getData().add(new XYChart.Data<String, Number>("Julio", 94));
+		series2.getData().add(new XYChart.Data<String, Number>("Agosto", 124));
+		series2.getData().add(new XYChart.Data<String, Number>("Septiembre", 74));
+		series2.getData().add(new XYChart.Data<String, Number>("Octubre", 63));
+		series2.getData().add(new XYChart.Data<String, Number>("Noviembre", 56));
+		series2.getData().add(new XYChart.Data<String, Number>("Diciembre", 80));
+		
+		list.add(series1);
+		list.add(series2);
+		
+        return FXCollections.observableArrayList(list);
+	}
+	
 	public boolean showEntradaEditDialog(Entrada entrada) {
 	    try {
 	        // Cargamos el diseño del diálogo desde un XML

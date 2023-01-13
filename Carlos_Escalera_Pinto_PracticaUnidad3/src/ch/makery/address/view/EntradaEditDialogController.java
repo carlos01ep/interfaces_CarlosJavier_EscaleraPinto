@@ -52,11 +52,12 @@ public class EntradaEditDialogController {
      * 
      * @param person
      */
+    
     public void setEntrada(Entrada entrada) {
         this.entrada = entrada;
     	Apellidos.setText(entrada.getSspApellido());
     	Descuento.setText(""+entrada.getSipDescuento());
-    	FechaEntrada.setText(entrada.getSspFechaEntrada());
+    	FechaEntrada.setText(DateUtil.format(entrada.getSspFechaEntrada()));
     	FormaDePago.setText(entrada.getSspFormaDePago());
     	Nombre.setText(entrada.getSspNombre());
     	NumAdultos.setText(""+entrada.getSipNumEntradasAdulto());
@@ -82,7 +83,7 @@ public class EntradaEditDialogController {
         	entrada.setSspNombre(Nombre.getText());
         	entrada.setSspApellido(Apellidos.getText());
         	entrada.setSipDescuento(Integer.parseInt(Descuento.getText()));
-        	entrada.setSspFechaEntrada(FechaEntrada.getText());
+        	entrada.setSspFechaEntrada(DateUtil.parse(FechaEntrada.getText()));
         	entrada.setSspFormaDePago(FormaDePago.getText());
         	entrada.setSipNumEntradasAdulto(Integer.parseInt(NumAdultos.getText()));
         	entrada.setSipNumEntradasInfantil(Integer.parseInt(NumNiños.getText()));

@@ -1,6 +1,8 @@
 package ch.makery.address.view;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 import ch.makery.address.Main;
 import ch.makery.address.model.Entrada;
@@ -17,6 +19,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldListCell;
 import javafx.scene.layout.BorderPane;
@@ -27,7 +30,8 @@ import javafx.stage.Stage;
 
 public class InicioController {
 	private Main mainApp;
-
+	private ArrayList<Entrada> arrayListEntradasDataAux;
+	private ObservableList<Entrada> observableListEntradasDataAux2;
 	// Pantalla principal en la que se añade o quita contenido
 	//Dinamico
 	  @FXML
@@ -38,7 +42,8 @@ public class InicioController {
 
 	    @FXML
 	    private Label labelFecha;
-
+	    @FXML
+	    private TextField textFieldBuscar;
 	    @FXML
 	    private Label labelFechaEntrada;
 
@@ -71,6 +76,19 @@ public class InicioController {
 	    void botonEditar(ActionEvent event) {
 	    	mainApp.showEditar();
 	    }
+		@FXML
+		void botonBuscar(ActionEvent event) {
+			String nombreBuscar = textFieldBuscar.getText();
+
+			arrayListEntradasDataAux =  (ArrayList<Entrada>) this.mainApp.getPersonData().stream()
+					.filter(s->s.getSspNombre()
+					.substring(0,nombreBuscar.length()).equals(nombreBuscar))
+					.collect(Collectors.toList());
+			//System.out.println("Personas cuyo nombre empieza por " +  nombreBuscar);
+			
+			observableListEntradasDataAux2 = FXCollections.observableArrayList(arrayListEntradasDataAux);
+			table1.setItems(observableListEntradasDataAux2);
+		}
 
 	    @FXML
 	    void botonSalir(ActionEvent event) {
@@ -111,8 +129,8 @@ public class InicioController {
 	        	// Si el campo contiene datos, entonces se rellena la información
 	        	labelApellido.setText(entrada.getSspApellido());
 	        	labelDescuento.setText(""+entrada.getSipDescuento());
-	        	labelFecha.setText(entrada.getSspFechaCompra());
-	        	labelFechaEntrada.setText(entrada.getSspFechaEntrada());
+	        	labelFecha.setText(DateUtil.format(entrada.getSspFechaCompra()));
+	        	labelFechaEntrada.setText(DateUtil.format(entrada.getSspFechaEntrada()));
 	        	labelFormaPago.setText(entrada.getSspFormaDePago());
 	        	labelNombre.setText(entrada.getSspNombre());
 	        	labelNumAdulto.setText(""+entrada.getSipNumEntradasAdulto());

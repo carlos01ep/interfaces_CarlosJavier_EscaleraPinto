@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.VentanaGraficosController">
+   <children>
+      <PieChart fx:id="pieChart" clockwise="false" legendSide="LEFT" title="Calificaciones" />
+   </children>
+</AnchorPane>

@@ -1,7 +1,11 @@
 package ch.makery.address.model;
 
+import java.time.LocalDate;
+
+import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 /**
@@ -12,29 +16,46 @@ import javafx.beans.property.SimpleStringProperty;
  * 
  */
 public class Entrada {
+	private static final int PRECIO_ADULTOS = 25;
+	private static final int PRECIO_NIÑOS = 13;
 	private final SimpleStringProperty sspNombre;
 	private final SimpleStringProperty sspApellido;
-	private final SimpleStringProperty sspFechaCompra;
-	private final SimpleStringProperty sspFechaEntrada;
+	private final ObjectProperty<LocalDate> sspFechaCompra;
+	private final ObjectProperty<LocalDate> sspFechaEntrada;
 	private final SimpleIntegerProperty sipNumEntradasAdulto;
 	private final SimpleIntegerProperty sipNumEntradasInfantil;
 	private final SimpleIntegerProperty sipDescuento;
 	private final SimpleDoubleProperty sdpPrecioTotal;
 	private final SimpleStringProperty sspFormaDePago;
 
-	public Entrada(String sspNombre, String sspApellido, String sspFechaCompra, String sspFechaEntrada,
+	public Entrada(String sspNombre, String sspApellido, SimpleObjectProperty<LocalDate> sspFechaCompra, SimpleObjectProperty<LocalDate> sspFechaEntrada,
 			Integer sipNumEntradasAdulto, Integer sipNumEntradasInfantil, Integer sipDescuento, Double sdpPrecioTotal,
 			String sspFormaDePago) {
 		this.sspNombre = new SimpleStringProperty(sspNombre);
 		this.sspApellido = new SimpleStringProperty(sspApellido);
-		this.sspFechaCompra = new SimpleStringProperty(sspFechaCompra);
-		this.sspFechaEntrada = new SimpleStringProperty(sspFechaEntrada);
+		this.sspFechaCompra =  new SimpleObjectProperty<LocalDate>(LocalDate.now());
+		this.sspFechaEntrada = new SimpleObjectProperty<LocalDate>(sspFechaEntrada.get());
 		this.sipNumEntradasAdulto = new SimpleIntegerProperty(sipNumEntradasAdulto);
 		this.sipNumEntradasInfantil = new SimpleIntegerProperty(sipNumEntradasInfantil);
 		this.sipDescuento = new SimpleIntegerProperty(sipDescuento);
 		this.sdpPrecioTotal = new SimpleDoubleProperty(sdpPrecioTotal);
 		this.sspFormaDePago = new SimpleStringProperty(sspFormaDePago);
 	}
+	
+
+	public Entrada() {
+		this.sspNombre = new SimpleStringProperty();
+		this.sspApellido = new SimpleStringProperty();
+		this.sspFechaCompra = new SimpleObjectProperty<LocalDate>(LocalDate.now());
+		this.sspFechaEntrada = new SimpleObjectProperty<LocalDate>();
+		this.sipNumEntradasAdulto = new SimpleIntegerProperty();
+		this.sipNumEntradasInfantil = new SimpleIntegerProperty();
+		this.sipDescuento = new SimpleIntegerProperty();
+		this.sdpPrecioTotal = new SimpleDoubleProperty();
+		this.sspFormaDePago = new SimpleStringProperty();
+
+	}
+
 
 	public String getSspNombre() {
 		return sspNombre.get();
@@ -52,19 +73,19 @@ public class Entrada {
 		sspApellido.set(sApellido);
 	}
 
-	public String getSspFechaCompra() {
+	public LocalDate getSspFechaCompra() {
 		return sspFechaCompra.get();
 	}
 
-	public void setSspFechaCompra(String sFechaCompra) {
+	public void setSspFechaCompra(LocalDate sFechaCompra) {
 		sspFechaCompra.set(sFechaCompra);
 	}
 
-	public String getSspFechaEntrada() {
+	public LocalDate getSspFechaEntrada() {
 		return sspFechaEntrada.get();
 	}
 
-	public void setSspFechaEntrada(String sFechaEntrada) {
+	public void setSspFechaEntrada(LocalDate sFechaEntrada) {
 		sspFechaEntrada.set(sFechaEntrada);
 	}
 
@@ -104,5 +125,9 @@ public class Entrada {
 	}
 	public void setSspFormaDePago(String sFormaDePago) {
 		sspFormaDePago.set(sFormaDePago);
+	}
+	public void calcularTotal(int adultos, int niños) {
+		double total = (double)(adultos*PRECIO_ADULTOS)+(niños*PRECIO_NIÑOS);
+		setSdpPrecioTotal(total);
 	}
 }

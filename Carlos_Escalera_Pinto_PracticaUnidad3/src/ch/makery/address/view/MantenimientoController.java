@@ -1,59 +1,27 @@
 package ch.makery.address.view;
 
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 import ch.makery.address.Main;
 import ch.makery.address.model.Entrada;
-import ch.makery.address.model.Person;
-import ch.makery.address.util.DateUtil;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableColumn.CellDataFeatures;
-import javafx.scene.control.ListView;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeView;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldListCell;
-import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.scene.control.cell.TextFieldTreeCell;
-import javafx.util.converter.IntegerStringConverter;
 
 public class MantenimientoController {
 	boolean botonBorrarOk = false;
 	private Main mainApp;
-	// private ObservableList<Entrada> personData = this.mainApp.getPersonData();
-
-	@FXML
-	private ToggleGroup descuento;
-
-	@FXML
-	private TextField labelApellidos;
-
-	@FXML
-	private DatePicker labelfechaEntrada;
-
-    @FXML
-    private TextField labelNombre;
-
-	@FXML
-	private RadioButton rbDescuentoCinco;
-
-	@FXML
-	private RadioButton rbDescuentoQuince;
+	private ArrayList<Entrada> arrayListEntradasDataAux;
+	private ObservableList<Entrada> observableListEntradasDataAux2;
 
 	@FXML
 	private TableColumn<Entrada, String> Apellidos;
@@ -75,19 +43,27 @@ public class MantenimientoController {
 
 	@FXML
 	private TableColumn<Entrada, Integer> NumNiños;
-
+    @FXML
+    private TextField textFieldBuscar;
 	@FXML
 	private TableColumn<Entrada, Double> Total;
-
-	@FXML
-	private ComboBox<Integer> comboNnumEntradaInfantil;
-
-	@FXML
-	private ComboBox<Integer> comboNumEntradaAdulto;
 	@FXML
 	private TableView<Entrada> tableModificar;
+
+
 	@FXML
-	private ChoiceBox<String> ChoiceFormaDePago;
+	void botonBuscar(ActionEvent event) {
+		String nombreBuscar = textFieldBuscar.getText();
+
+		arrayListEntradasDataAux =  (ArrayList<Entrada>) this.mainApp.getPersonData().stream()
+				.filter(s->s.getSspNombre()
+				.substring(0,nombreBuscar.length()).equals(nombreBuscar))
+				.collect(Collectors.toList());
+		//System.out.println("Personas cuyo nombre empieza por " +  nombreBuscar);
+		
+		observableListEntradasDataAux2 = FXCollections.observableArrayList(arrayListEntradasDataAux);
+		tableModificar.setItems(observableListEntradasDataAux2);
+	}
 
 	@FXML
 	void botonBorrar(ActionEvent event) {
@@ -127,61 +103,33 @@ public class MantenimientoController {
 		if (selectedEntrada != null) {
 			boolean okClicked = mainApp.showEntradaEditDialog(selectedEntrada);
 			if (okClicked) {
-				mainApp.showInicio();
+				mainApp.showEditar();
+				selectedEntrada.calcularTotal(selectedEntrada.getSipNumEntradasAdulto(), selectedEntrada.getSipNumEntradasInfantil());
 			}
 
 		} else {
-			// Se muestra un alert si no se puede eliminar la fila
+			// Se muestra un alert si no se puede editar la fila
 			Alert errorAlert = new Alert(AlertType.ERROR);
 
 			errorAlert.setTitle("Error al editar Entrada");
 			errorAlert.setHeaderText("No se ha seleccionado ninguna fila");
 			errorAlert.setContentText("Por favor, selecciona una Entrada en la tabla");
-
 			errorAlert.showAndWait();
 		}
 	}
 
 	@FXML
 	void eventoAñadir(ActionEvent event) {
-		// añade un nuevo registro
-		int descuentoPorcentaje = 0;
-		if (rbDescuentoCinco.isSelected()) {
-			descuentoPorcentaje = 5;
-		} else if (rbDescuentoQuince.isSelected()) {
-			descuentoPorcentaje = 15;
-		}else {
-			descuentoPorcentaje = 0;
+		Entrada selectedEntrada = new Entrada();
+		boolean okClicked = mainApp.showEntradaEditDialog(selectedEntrada);
+		if (okClicked) {
+			mainApp.getPersonData().add(selectedEntrada);
+			selectedEntrada.calcularTotal(selectedEntrada.getSipNumEntradasAdulto(), selectedEntrada.getSipNumEntradasInfantil());
 		}
-		System.out.println("----numero de adultos----: " + comboNumEntradaAdulto.getSelectionModel().getSelectedItem());
-		System.out.println("----numero de ninios----: " + comboNnumEntradaInfantil.getSelectionModel().getSelectedItem());
-		//Integer numeroAdultos = comboNumEntradaAdulto.getSelectionModel().getSelectedItem();
-		//Integer numeroniños = comboNnumEntradaInfantil.getSelectionModel().getSelectedItem();
-		String formaDePago = (String)ChoiceFormaDePago.getSelectionModel().getSelectedItem();
-		tableModificar.getItems()
-				.add(new Entrada(labelNombre.getText(),
-						labelApellidos.getText() , 
-						"20/11/2022",
-						"20/11/2022", 
-						3, 
-						5, 
-						descuentoPorcentaje,
-						1000000.9, 
-						ChoiceFormaDePago.getSelectionModel().getSelectedItem()
-						));
-		
-		// rediracciona a la pantalla de inicio
-		mainApp.showInicio();
 	}
 
 	// Lista auxiliar para TableView
-	private ObservableList<Entrada> data = FXCollections.observableArrayList(
-			new Entrada("Jacob", "Smith", "01/02/2022", "01/02/2022", 1, 1, 5, 100.9, "Tarjeta"),
-			new Entrada("Isabella", "Johnson", "01/02/2022", "01/02/2022", 1, 1, 5, 100.9, "Tarjeta"),
-			new Entrada("Ethan", "Williams", "01/02/2022", "01/02/2022", 1, 1, 5, 100.9, "Tarjeta"),
-			new Entrada("Emma", "Jones", "01/02/2022", "01/02/2022", 1, 1, 5, 100.9, "Tarjeta"),
-			new Entrada("Michael", "Brown", "01/02/2022", "01/02/2022", 1, 1, 5, 100.9, "Tarjeta"));
-
+	
 	public void setMainApp(Main mainApp) {
 		this.mainApp = mainApp;
 
@@ -200,39 +148,7 @@ public class MantenimientoController {
 		NumAdultos.setCellValueFactory(new PropertyValueFactory<Entrada, Integer>("sipNumEntradasAdulto"));
 		NumNiños.setCellValueFactory(new PropertyValueFactory<Entrada, Integer>("sipNumEntradasInfantil"));
 		Total.setCellValueFactory(new PropertyValueFactory<Entrada, Double>("sdpPrecioTotal"));
-		// Se rellena la tabla con objetos de la clase Person
-		tableModificar.setItems(data);
-
-		// Controles de JavaFX a los que se añaden directamente los items
-		// Ítems del ChoiceBox
-		ChoiceFormaDePago.getItems().addAll("Efectivo", "Tarjeta de credito", "Transferencia", "Otro");
-
-		// Ítems del ComboBox
-		comboNumEntradaAdulto.getItems().addAll(1, 2, 3, 4, 5, 6, 7, 8, 9);
-		comboNnumEntradaInfantil.getItems().addAll(1, 2, 3, 4, 5, 6, 7, 8, 9);
 
 	}
 
-	private void showEntradaDetails(Entrada entrada) {
-		if (entrada != null) {
-			// Si el campo contiene datos, entonces se rellena la información
-			Apellidos.setText(entrada.getSspApellido());
-			Descuento.setText("" + entrada.getSipDescuento());
-			FechaEntrada.setText(entrada.getSspFechaEntrada());
-			FormaDePago.setText(entrada.getSspFormaDePago());
-			Nombre.setText(entrada.getSspNombre());
-			NumAdultos.setText("" + entrada.getSipNumEntradasAdulto());
-			NumNiños.setText("" + entrada.getSipNumEntradasInfantil());
-
-		} else {
-			// Person is null, remove all the text.
-			Apellidos.setText("");
-			Descuento.setText("");
-			FechaEntrada.setText("");
-			FormaDePago.setText("");
-			Nombre.setText("");
-			NumAdultos.setText("");
-			NumNiños.setText("");
-		}
-	}
 }

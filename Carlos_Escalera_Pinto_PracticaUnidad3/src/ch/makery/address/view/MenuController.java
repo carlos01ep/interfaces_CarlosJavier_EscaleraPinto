@@ -22,11 +22,11 @@ import javafx.scene.layout.VBox;
 public class MenuController {
 	private Main mainApp;
 	// Pantalla principal en la que se añade o quita contenido
-	//private BorderPane rootLayout;
+	// private BorderPane rootLayout;
 
 	@FXML
 	private void initialize() {
-		
+
 	}
 
 	@FXML
@@ -44,6 +44,10 @@ public class MenuController {
 		this.mainApp.showTutorial();
 	}
 
+	@FXML
+	void abrirGraficos(ActionEvent event) {
+		this.mainApp.showGraficos();
+	}
 
 	public void setMainApp(Main mainApp) {
 		this.mainApp = mainApp;
