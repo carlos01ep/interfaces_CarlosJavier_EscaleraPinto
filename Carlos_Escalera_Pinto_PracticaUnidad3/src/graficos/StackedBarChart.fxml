@@ -5,9 +5,9 @@
 <?import javafx.scene.chart.StackedBarChart?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graficos.VentanaGraficosController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graficos.VentanaGraficosController">
    <children>
-      <StackedBarChart fx:id="stackedBarChart" title="Calificaciones">
+      <StackedBarChart fx:id="stackedBarChart" title="Calificaciones" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <xAxis>
           <CategoryAxis label="Alumnos/módulos" side="BOTTOM" />
         </xAxis>

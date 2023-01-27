@@ -61,8 +61,11 @@ public class Main extends Application {
 
 			// Se añade el diseño principal a la escena
 			Scene scene = new Scene(rootLayout);
-			primaryStage.setScene(scene);				
+			primaryStage.setScene(scene);	
+			//scene.getStylesheets().add("basico1/css/estilo1.css");
+
 			primaryStage.show();
+			
 			// Damos al controlador acceso a la aplicaicón principal
 	        MenuController controller = loader.getController();
 	        controller.setMainApp(this);
@@ -242,11 +245,11 @@ public class Main extends Application {
 		series2.getData().add(new XYChart.Data<String, Number>("Mayo", 860));
 		series2.getData().add(new XYChart.Data<String, Number>("Junio", 1170));
 		series2.getData().add(new XYChart.Data<String, Number>("Julio", 1240));
-		series2.getData().add(new XYChart.Data<String, Number>("Agosto", 1640));
+		series2.getData().add(new XYChart.Data<String, Number>("Agosto", 2640));
 		series2.getData().add(new XYChart.Data<String, Number>("Septiembre", 940));
 		series2.getData().add(new XYChart.Data<String, Number>("Octubre", 830));
 		series2.getData().add(new XYChart.Data<String, Number>("Noviembre", 860));
-		series2.getData().add(new XYChart.Data<String, Number>("Diciembre", 1700));
+		series2.getData().add(new XYChart.Data<String, Number>("Diciembre", 2700));
 		
 		list.add(series1);
 		list.add(series2);

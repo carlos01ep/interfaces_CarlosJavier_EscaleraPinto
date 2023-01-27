@@ -46,7 +46,7 @@ public class VentanaGraficosController {
 		
 		// Se muestra en cada etiqueta el valor
 		for (final PieChart.Data data : pieChart.getData()) {
-		    data.setName(data.getName() + "=" + data.getPieValue());
+		    data.setName(data.getName() + ": " + (int)data.getPieValue());
 		}
     }
  // Método para inicializar el StackedBarChart
