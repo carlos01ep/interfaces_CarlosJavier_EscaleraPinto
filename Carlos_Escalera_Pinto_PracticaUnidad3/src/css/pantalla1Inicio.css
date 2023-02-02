@@ -1,0 +1,37 @@
+.root {
+    /*-fx-font-size: 14px;
+    -fx-font-family: sans-serif;
+    -fx-background-color: #BDBDBD;*/
+}
+#titulo{
+	-fx-font-weight: bold;
+	-fx-font-family: sans-serif;
+	-fx-font-size: 30px;
+	-fx-text-fill: orange;
+}
+
+#subtitulo{
+	-fx-font-weight: bold;
+	-fx-font-family: sans-serif;
+	-fx-font-size: 20px;
+	-fx-text-fill: orange;
+}
+.botonNaranja{
+	-fx-background-color: orange;
+	-fx-text-fill: white;
+	-fx-font-size: 12px;
+}
+HBox StackPane{
+	
+}
+#imgMain{
+	-fx-translate-x:50px;
+	-fx-rotate:18.5;
+}
+
+.botonSecundario{
+	-fx-background-color:blue;
+	-fx-text-fill: orange;
+	-fx-font-weight: bold;
+}
+

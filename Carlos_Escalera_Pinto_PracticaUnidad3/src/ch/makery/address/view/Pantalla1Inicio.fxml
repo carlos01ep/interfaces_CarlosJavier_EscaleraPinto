@@ -17,26 +17,21 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="650.0" prefWidth="1000.0" stylesheets="@../../../../css/estilo1.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.InicioController">
+<AnchorPane id="root" prefHeight="650.0" prefWidth="1000.0" stylesheets="@../../../../css/pantalla1Inicio.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.InicioController">
    <children>
       <VBox layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
                   <StackPane prefHeight="100.0" prefWidth="844.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <Text fill="#0022a2" strokeType="OUTSIDE" strokeWidth="0.0" text="CONTROL DE ENTRADAS">
-                           <font>
-                              <Font name="Tahoma Bold" size="36.0" />
-                           </font>
-                        </Text>
+                        <Label id="titulo" alignment="CENTER" contentDisplay="CENTER" text="CONTROL DE ENTRADAS" StackPane.alignment="CENTER" />
                      </children>
                   </StackPane>
                   <StackPane prefHeight="100.0" prefWidth="337.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView id="imgMain" fitHeight="70.0" fitWidth="70.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
                            <image>
                               <Image url="@../../../../images/Logo1.png" />
                            </image>
@@ -45,7 +40,7 @@
                   </StackPane>
                </children>
             </HBox>
-            <SplitPane dividerPositions="0.5010016025641025" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <SplitPane dividerPositions="0.5070112179487178" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                <items>
                   <AnchorPane>
                      <children>
@@ -54,7 +49,7 @@
                               <HBox>
                                  <children>
                                     <TextField fx:id="textFieldBuscar" nodeOrientation="LEFT_TO_RIGHT" promptText="NOMBRE/APELLIDO" HBox.hgrow="ALWAYS" />
-                                    <Button mnemonicParsing="false" onAction="#botonBuscar" text="BUSCAR" />
+                                    <Button mnemonicParsing="false" onAction="#botonBuscar" styleClass="botonNaranja" text="BUSCAR" />
                                  </children>
                               </HBox>
                               <TableView fx:id="table1" VBox.vgrow="ALWAYS">
@@ -74,15 +69,11 @@
                      <children>
                         <VBox layoutX="185.0" layoutY="97.0" prefHeight="250.0" prefWidth="210.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <HBox>
+                              <HBox alignment="CENTER">
                                  <children>
                                     <StackPane HBox.hgrow="ALWAYS">
                                        <children>
-                                          <Text fill="#0022a2" strokeType="OUTSIDE" strokeWidth="0.0" text="DETALLE" textAlignment="CENTER">
-                                             <font>
-                                                <Font name="Tahoma Bold" size="19.0" />
-                                             </font>
-                                          </Text>
+                                          <Label id="subtitulo" alignment="CENTER" text="DETALLE" />
                                        </children>
                                     </StackPane>
                                  </children>
@@ -140,7 +131,7 @@
             </SplitPane>
             <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#botonEditar" prefHeight="30.0" prefWidth="138.0" text="MANTENIMIENTO" textAlignment="CENTER">
+                  <Button mnemonicParsing="false" onAction="#botonEditar" prefHeight="30.0" prefWidth="138.0" styleClass="botonSecundario" text="MANTENIMIENTO" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
