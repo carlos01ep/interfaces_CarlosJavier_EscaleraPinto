@@ -24,9 +24,12 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <StackPane prefHeight="100.0" prefWidth="844.0" HBox.hgrow="ALWAYS">
+                  <StackPane alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="844.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <Label id="titulo" alignment="CENTER" contentDisplay="CENTER" text="CONTROL DE ENTRADAS" StackPane.alignment="CENTER" />
+                        <Label id="titulo" alignment="CENTER" contentDisplay="CENTER" text="CONTROL DE ENTRADAS" StackPane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding></Label>
                      </children>
                   </StackPane>
                   <StackPane prefHeight="100.0" prefWidth="337.0" HBox.hgrow="ALWAYS">
@@ -46,10 +49,10 @@
                      <children>
                         <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <HBox>
+                              <HBox id="buscador">
                                  <children>
-                                    <TextField fx:id="textFieldBuscar" nodeOrientation="LEFT_TO_RIGHT" promptText="NOMBRE/APELLIDO" HBox.hgrow="ALWAYS" />
-                                    <Button mnemonicParsing="false" onAction="#botonBuscar" styleClass="botonNaranja" text="BUSCAR" />
+                                    <TextField fx:id="textFieldBuscar" nodeOrientation="LEFT_TO_RIGHT" prefWidth="270.0" promptText="NOMBRE/APELLIDO" HBox.hgrow="ALWAYS" />
+                                    <Button mnemonicParsing="false" onAction="#botonBuscar" prefWidth="120.0" styleClass="botonSecundario" text="BUSCAR" />
                                  </children>
                               </HBox>
                               <TableView fx:id="table1" VBox.vgrow="ALWAYS">
@@ -67,7 +70,7 @@
                   </AnchorPane>
                   <AnchorPane>
                      <children>
-                        <VBox layoutX="185.0" layoutY="97.0" prefHeight="250.0" prefWidth="210.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <VBox id="DetalleBorder" layoutX="185.0" layoutY="97.0" prefHeight="250.0" prefWidth="210.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <HBox alignment="CENTER">
                                  <children>
@@ -131,12 +134,12 @@
             </SplitPane>
             <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#botonEditar" prefHeight="30.0" prefWidth="138.0" styleClass="botonSecundario" text="MANTENIMIENTO" textAlignment="CENTER">
+                  <Button mnemonicParsing="false" onAction="#botonEditar" prefHeight="30.0" prefWidth="138.0" styleClass="botonNaranja" text="MANTENIMIENTO" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#botonSalir" prefHeight="30.0" prefWidth="100.0" text="SALIR" textAlignment="CENTER">
+                  <Button mnemonicParsing="false" onAction="#botonSalir" prefHeight="30.0" prefWidth="100.0" styleClass="botonGris" text="SALIR" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>

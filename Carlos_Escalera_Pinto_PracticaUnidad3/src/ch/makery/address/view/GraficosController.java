@@ -65,7 +65,6 @@ public class GraficosController {
 		this.dialogStage = new Stage();
 		this.dialogStage.setTitle("Estadísticas de calificaciones");
 		this.dialogStage.initModality(Modality.APPLICATION_MODAL);
-
 		Scene scene = new Scene(page);
 		this.dialogStage.setScene(scene);
 	}
