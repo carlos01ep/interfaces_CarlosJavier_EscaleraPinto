@@ -27,7 +27,13 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 //import layout2.Person;
 import javafx.stage.Stage;
-
+/**
+ * Clase controlador de la pantalla inicio
+ * 
+ * @author CJEP DAM 2
+ * @version 1.0
+ *
+ */
 public class InicioController {
 	private Main mainApp;
 	private ArrayList<Entrada> arrayListEntradasDataAux;
@@ -116,6 +122,10 @@ public class InicioController {
 		    table1.getSelectionModel().selectedItemProperty().addListener(
 	                (observable, oldValue, newValue) -> showEntradaDetails(newValue)); 
 	    }
+	    /**
+	     * asocia mi aplicación main a la varialbe
+	     * @param mainApp Parámetro de la clase principal de la aplicación
+	     */
 	    public void setMainApp(Main mainApp) {
 	        this.mainApp = mainApp;
 

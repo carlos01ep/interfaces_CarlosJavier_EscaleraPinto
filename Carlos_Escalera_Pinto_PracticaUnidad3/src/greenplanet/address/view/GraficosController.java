@@ -30,7 +30,13 @@ import greenplanet.address.Main;
 import greenplanet.address.model.Entrada;
 import greenplanet.address.model.Person;
 import greenplanet.address.util.DateUtil;
-
+/**
+ * Clase controlador de la pantalla graficos
+ * 
+ * @author CJEP DAM 2
+ * @version 1.0
+ *
+ */
 public class GraficosController {
 	private Main mainApp;
 	private FXMLLoader loader;

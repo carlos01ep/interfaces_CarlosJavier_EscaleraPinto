@@ -9,11 +9,11 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 /**
- * 
  * Clase auxiliar que se emplear� para el modelo de datos del TableView
  * 
  * @author CJEP DAM 2
- * 
+ * @version 1.0
+ *
  */
 public class Entrada {
 	private static final int PRECIO_ADULTOS = 25;

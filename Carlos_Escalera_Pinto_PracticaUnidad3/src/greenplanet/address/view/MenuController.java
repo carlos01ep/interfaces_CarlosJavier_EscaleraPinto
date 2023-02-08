@@ -18,7 +18,13 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 //import layout2.Person;
-
+/**
+ * Clase controlador de la pantalla menu
+ * 
+ * @author CJEP DAM 2
+ * @version 1.0
+ *
+ */
 public class MenuController {
 	private Main mainApp;
 	// Pantalla principal en la que se añade o quita contenido

@@ -8,12 +8,18 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
+/**
+ * Clase controlador de la pantalla editar dialog
+ * 
+ * @author CJEP DAM 2
+ * @version 1.0
+ *
+ */
 public class EntradaEditDialogController {
 
 
     
-    // Este componente ser� un di�logo. Campos auxiliares para su gesti�n
+    // Este componente será un diálogo. Campos auxiliares para su gestión
     private Stage dialogStage;
     private Entrada entrada;
     private boolean okClicked = false;
@@ -40,7 +46,7 @@ public class EntradaEditDialogController {
 
 
     /**
-     * M�todo para inicializar el controlador que se llama cuando se carga el FXML
+     * Método para inicializar el controlador que se llama cuando se carga el FXML
      */
     @FXML
     private void initialize() {
@@ -48,7 +54,7 @@ public class EntradaEditDialogController {
     }
     
     /**
-     * Rellena los datos de la persona que va a ser a�adida o modificada en el di�logo
+     * Rellena los datos de la persona que va a ser añadida o modificada en el diálogo
      * 
      * @param person
      */
@@ -66,7 +72,7 @@ public class EntradaEditDialogController {
     }
 
     /**
-     * Devuelve true si el usuario hace click en el bot�n "OK"
+     * Devuelve true si el usuario hace click en el botón "OK"
      * 
      * @return
      */
@@ -75,7 +81,7 @@ public class EntradaEditDialogController {
     }
 
     /**
-     * Manejador del bot�n "OK"
+     * Manejador del botón "OK"
      */
     @FXML
     private void handleOk() {
@@ -93,7 +99,7 @@ public class EntradaEditDialogController {
     }
 
     /**
-     * Manejador del bot�n "Cancel" 
+     * Manejador del botón "Cancel" 
      */
     @FXML
     private void handleCancel() {
@@ -103,7 +109,7 @@ public class EntradaEditDialogController {
     /**
      * Valida los campos de texto del usuario
      * 
-     * @return true si los campos son v�lidos
+     * @return true si los campos son válidos
      */
     private boolean isInputValid() {
         String errorMessage = "";
@@ -123,7 +129,7 @@ public class EntradaEditDialogController {
         if (Descuento.getText() == null || Descuento.getText().length() == 0) {
             errorMessage += "El campo Descuento está vacío\n"; 
         } else {
-            // Se intenta convertir el c�digo postal en entero y si da un error se muestra un mensaje
+            // Se intenta convertir el código postal en entero y si da un error se muestra un mensaje
             try {
                 Integer.parseInt(Descuento.getText());
             } catch (NumberFormatException e) {
@@ -133,7 +139,7 @@ public class EntradaEditDialogController {
         if (NumAdultos.getText() == null || NumAdultos.getText().length() == 0) {
             errorMessage += "El campo Número Adultos está vacío\n"; 
         } else {
-            // Se intenta convertir el c�digo postal en entero y si da un error se muestra un mensaje
+            // Se intenta convertir el código postal en entero y si da un error se muestra un mensaje
             try {
                 Integer.parseInt(NumAdultos.getText());
             } catch (NumberFormatException e) {
@@ -143,7 +149,7 @@ public class EntradaEditDialogController {
         if (NumNiños.getText() == null || NumNiños.getText().length() == 0) {
             errorMessage += "El Número Niños está vacío\n"; 
         } else {
-            // Se intenta convertir el c�digo postal en entero y si da un error se muestra un mensaje
+            // Se intenta convertir el código postal en entero y si da un error se muestra un mensaje
             try {
                 Integer.parseInt(NumNiños.getText());
             } catch (NumberFormatException e) {
@@ -167,7 +173,7 @@ public class EntradaEditDialogController {
     }
     
     /**
-     * M�todo set de la propiedad dialogStage
+     * Método set de la propiedad dialogStage
      * 
      * @param dialogStage
      */

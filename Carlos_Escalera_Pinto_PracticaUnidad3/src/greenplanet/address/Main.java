@@ -175,22 +175,25 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * Método que devuelve la lista con las entradas
+	 * @return variable de tipo ObservableList que contiene información de las entradas
+	 */
 	public ObservableList<Entrada> getPersonData() {
 		return personData;
 	}
 
 	public Main() {
 		SimpleObjectProperty<LocalDate> fecha1 = new SimpleObjectProperty<LocalDate>(LocalDate.of(1999, 2, 21));
-		personData.add(new Entrada("Hans", "Muster", fecha1, fecha1, 2, 3, 5, 25.0, "Trjeta"));
-		personData.add(new Entrada("Ruth", "Mueller", fecha1, fecha1, 2, 3, 5, 25.0, "Trjeta"));
-		personData.add(new Entrada("Heinz", "Kurz", fecha1, fecha1, 2, 3, 5, 25.0, "Trjeta"));
-		personData.add(new Entrada("Cornelia", "Meier", fecha1, fecha1, 2, 3, 5, 25.0, "Trjeta"));
-		personData.add(new Entrada("Werner", "Meyer", fecha1, fecha1, 2, 3, 5, 25.0, "Trjeta"));
-		personData.add(new Entrada("Lydia", "Kunz", fecha1, fecha1, 2, 3, 5, 25.0, "Trjeta"));
-		personData.add(new Entrada("Anna", "Best", fecha1, fecha1, 2, 3, 5, 25.0, "Trjeta"));
-		personData.add(new Entrada("Stefan", "Meier", fecha1, fecha1, 2, 3, 5, 25.0, "Trjeta"));
-		personData.add(new Entrada("Martin", "Mueller", fecha1, fecha1, 2, 3, 5, 25.0, "Trjeta"));
+		personData.add(new Entrada("Hans", "Muster", fecha1, fecha1, 2, 3, 5, 25.0, "Tarjeta"));
+		personData.add(new Entrada("Ruth", "Mueller", fecha1, fecha1, 2, 3, 5, 25.0, "Tarjeta"));
+		personData.add(new Entrada("Heinz", "Kurz", fecha1, fecha1, 2, 3, 5, 25.0, "Tarjeta"));
+		personData.add(new Entrada("Cornelia", "Meier", fecha1, fecha1, 2, 3, 5, 25.0, "Tarjeta"));
+		personData.add(new Entrada("Werner", "Meyer", fecha1, fecha1, 2, 3, 5, 25.0, "Tarjeta"));
+		personData.add(new Entrada("Lydia", "Kunz", fecha1, fecha1, 2, 3, 5, 25.0, "Tarjeta"));
+		personData.add(new Entrada("Anna", "Best", fecha1, fecha1, 2, 3, 5, 25.0, "Tarjeta"));
+		personData.add(new Entrada("Stefan", "Meier", fecha1, fecha1, 2, 3, 5, 25.0, "Tarjeta"));
+		personData.add(new Entrada("Martin", "Mueller", fecha1, fecha1, 2, 3, 5, 25.0, "Tarjeta"));
 
 	}
 
@@ -199,7 +202,7 @@ public class Main extends Application {
 		ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
 				new PieChart.Data("zona familiar", 5), new PieChart.Data("Zona infantil", 6),
 				new PieChart.Data("Zona acuatica", 8), new PieChart.Data("Zona de atracciones mecanicas", 6),
-				new PieChart.Data("Zona educativa", 5), new PieChart.Data("Zon de tranquilidad", 4));
+				new PieChart.Data("Zona educativa", 5), new PieChart.Data("Zona de tranquilidad", 4));
 
 		return pieChartData;
 	}

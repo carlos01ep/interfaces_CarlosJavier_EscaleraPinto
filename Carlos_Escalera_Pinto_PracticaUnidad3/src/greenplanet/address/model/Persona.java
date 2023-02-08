@@ -2,14 +2,14 @@ package greenplanet.address.model;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
-
 /**
- * 
  * Clase auxiliar para mostrar la lista en la pantalla de inico de persona
  * 
  * @author CJEP DAM 2
- * 
+ * @version 1.0
+ *
  */
+
 public class Persona {
     private final SimpleStringProperty firstName;
     private final SimpleStringProperty lastName;

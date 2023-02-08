@@ -16,7 +16,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-
+/**
+ * Clase controlador de la pantalla mantenimiento
+ * 
+ * @author CJEP DAM 2
+ * @version 1.0
+ *
+ */
 public class MantenimientoController {
 	boolean botonBorrarOk = false;
 	private Main mainApp;

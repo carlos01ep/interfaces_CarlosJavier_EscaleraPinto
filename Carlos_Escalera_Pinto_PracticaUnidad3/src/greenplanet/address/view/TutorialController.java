@@ -15,7 +15,13 @@ import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldListCell;
 import javafx.scene.control.cell.TextFieldTreeCell;
-
+/**
+ * Clase controlador de la pantalla tutorial
+ * 
+ * @author CJEP DAM 2
+ * @version 1.0
+ *
+ */
 public class TutorialController {
 	private Main mainApp;
     @FXML

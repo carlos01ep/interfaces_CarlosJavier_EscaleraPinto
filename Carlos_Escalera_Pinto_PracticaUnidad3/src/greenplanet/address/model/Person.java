@@ -9,11 +9,11 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 /**
- * 
  * Clase modelo para persona
  * 
  * @author CJEP DAM 2
- * 
+ * @version 1.0
+ *
  */
 public class Person {
 

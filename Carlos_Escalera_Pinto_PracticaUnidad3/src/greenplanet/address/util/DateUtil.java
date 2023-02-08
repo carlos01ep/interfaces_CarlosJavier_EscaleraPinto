@@ -3,10 +3,12 @@ package greenplanet.address.util;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-
 /**
  * Clase auxiliar para manejar fechas
  * 
+ * @author CJEP DAM 2
+ * @version 1.0
+ *
  */
 public class DateUtil {
 	
@@ -47,10 +49,10 @@ public class DateUtil {
     }
 
     /**
-     * Comprueba si un String es una fecha v�lida
+     * Comprueba si un String es una fecha válida
      * 
      * @param dateString
-     * @return true si la fecha es v�lida o false en caso contrario
+     * @return true si la fecha es válida o false en caso contrario
      */
     public static boolean validDate(String dateString) {
     	// Try to parse the String.
