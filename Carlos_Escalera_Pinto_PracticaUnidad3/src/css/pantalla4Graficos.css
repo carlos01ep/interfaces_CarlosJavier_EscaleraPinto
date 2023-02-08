@@ -1,0 +1,79 @@
+#titulo{
+	-fx-translate-x:50px;
+	-fx-font-weight: bold;
+	-fx-font-family: sans-serif;
+	-fx-font-size: 30px;
+	-fx-text-fill: white;
+}
+
+GridPane {
+	-fx-background-color:#36D7B4; 
+	-fx-grid-lines-visible: true;
+	-fx-padding: 10;
+	-fx-border-width: 10;
+	-fx-border-color: white;
+}
+
+GridPane Line {
+  -fx-stroke   : WHITE;
+
+
+}
+GridPane > VBox, GridPane > HBox{
+	-fx-background-color:orange; 
+}
+.subtitulo{
+	-fx-border-width: 3 3 5 3;
+	-fx-border-color: white;
+	-fx-text-fill: #36D7B4;
+	-fx-font-weight: bold;
+	-fx-background-color: white;
+	-fx-font-family: "Perpetua";
+	-fx-padding: 2 7 0 7;
+}
+.texto{
+	-fx-border-width: 3 3 5 3;
+	-fx-border-color: white;
+	-fx-text-fill: brown;
+	-fx-font-weight: bold;
+	-fx-background-color: white;
+	-fx-font-size: 18px;
+	-fx-font-family: "Consolas";
+	-fx-padding: 2 7 0 7;
+}
+.botonSecundario{
+	/*-fx-background-color:orange;*/
+	-fx-background-color: white; 
+	-fx-text-fill: brown;
+	-fx-font-size: 15px;
+	-fx-font-weight: bold;
+}
+.botonSecundario:hover{
+	/*-fx-background-color:orange;*/
+	-fx-background-color: grey; 
+	-fx-text-fill: white;
+	-fx-font-size: 15px;
+	-fx-font-weight: bold;
+}
+.botonSecundario:visited{
+	-fx-background-color: green;
+		-fx-text-fill: white;
+	-fx-font-size: 15px;
+	-fx-font-weight: bold; 
+}
+#imgMain{
+	-fx-rotate:-18.5;
+}
+.cabecera{
+	-fx-background-color: linear-gradient(from 35% 35% to 80% 75%, orange, #36D7B4);
+	-fx-border-color: white, linear-gradient(from 35% 35% to 80% 75%, orange, #36D7B4);
+	-fx-border-radius: 0,10;
+	-fx-border-insets: 0,10;
+	-fx-border-width: 20,15;
+	
+}
+.bordeimagen{
+	-fx-border-width: 4;
+	-fx-border-color: white;
+	-fx-border-radius: 100;
+}

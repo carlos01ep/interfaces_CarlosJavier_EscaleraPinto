@@ -8,10 +8,12 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-
 /**
- * Clase modelo para ejercicios.
- *
+ * 
+ * Clase modelo para persona
+ * 
+ * @author CJEP DAM 2
+ * 
  */
 public class Person {
 

@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane alignment="CENTER" minHeight="550.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.MantenimientoController">
+<GridPane id="root" alignment="CENTER" minHeight="550.0" styleClass="root" stylesheets="@../../../../css/pantalla2Mantenimiento.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.MantenimientoController">
    <columnConstraints>
       <ColumnConstraints hgrow="ALWAYS" maxWidth="-Infinity" minWidth="150.0" prefWidth="70.0" />
       <ColumnConstraints hgrow="ALWAYS" minWidth="700.0" />
@@ -33,10 +33,10 @@
       </StackPane>
       <VBox prefHeight="200.0" prefWidth="100.0" spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <children>
-            <HBox>
+            <HBox id="buscador">
                <children>
                   <TextField fx:id="textFieldBuscar" nodeOrientation="LEFT_TO_RIGHT" promptText="NOMBRE/APELLIDO" HBox.hgrow="ALWAYS" />
-                  <Button mnemonicParsing="false" onAction="#botonBuscar" prefWidth="100.0" text="BUSCAR">
+                  <Button mnemonicParsing="false" onAction="#botonBuscar" prefWidth="100.0" styleClass="botonSecundario" text="BUSCAR">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font></Button>
@@ -64,7 +64,7 @@
       </VBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
          <children>
-            <Text fill="#0022a2" strokeType="OUTSIDE" strokeWidth="0.0" text="MANTENIMIENTO DE ENTRADAS">
+            <Text id="titulo" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="MANTENIMIENTO DE ENTRADAS">
                <font>
                   <Font name="Comic Sans MS Bold" size="23.0" />
                </font>
@@ -73,24 +73,24 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0">
          <children>
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="imgMain" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../images/Logo1.png" />
                </image>
             </ImageView>
          </children>
       </HBox>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0" GridPane.rowIndex="1">
+      <VBox id="DetalleBorder" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0" GridPane.rowIndex="1">
          <children>
-            <Button mnemonicParsing="false" onAction="#eventoAñadir" prefWidth="100.0" text="AÑADIR">
+            <Button mnemonicParsing="false" onAction="#eventoAñadir" prefWidth="100.0" styleClass="botonNaranja" text="AÑADIR">
                <VBox.margin>
                   <Insets />
                </VBox.margin></Button>
-            <Button mnemonicParsing="false" onAction="#botonModificar" prefWidth="100.0" text="MODIFICAR">
+            <Button mnemonicParsing="false" onAction="#botonModificar" prefWidth="100.0" styleClass="botonNaranja" text="MODIFICAR">
                <VBox.margin>
                   <Insets />
                </VBox.margin></Button>
-            <Button mnemonicParsing="false" onAction="#botonBorrar" prefWidth="100.0" text="BORRAR">
+            <Button mnemonicParsing="false" onAction="#botonBorrar" prefWidth="100.0" styleClass="botonNaranja" text="BORRAR">
                <VBox.margin>
                   <Insets />
                </VBox.margin></Button>

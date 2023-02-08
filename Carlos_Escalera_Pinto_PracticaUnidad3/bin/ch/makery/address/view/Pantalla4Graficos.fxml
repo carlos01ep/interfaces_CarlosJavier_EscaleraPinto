@@ -3,22 +3,38 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
 
-<BorderPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.GraficosController">
+<BorderPane prefHeight="551.0" prefWidth="913.0" stylesheets="@../../../../css/pantalla4Graficos.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.GraficosController">
    <center>
-      <VBox prefHeight="300.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER">
          <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="cabecera">
+               <children>
+                  <StackPane styleClass="bordeimagen">
+                     <children>
+                        <ImageView id="imgMain" fitHeight="50.0" fitWidth="50.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../images/Logo1.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <Label id="titulo" alignment="CENTER" text="GRÁFICOS" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
             <GridPane alignment="CENTER" VBox.vgrow="ALWAYS">
               <columnConstraints>
-                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="394.4000244140625" minWidth="10.0" prefWidth="383.8000244140625" />
-                <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="295.20001220703125" minWidth="10.0" prefWidth="215.79997558593743" />
+                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="394.4000244140625" minWidth="10.0" prefWidth="332.799951171875" />
+                <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="295.20001220703125" minWidth="10.0" prefWidth="268.00004882812505" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="-Infinity" valignment="CENTER" vgrow="ALWAYS" />
@@ -26,27 +42,27 @@
                 <RowConstraints minHeight="-Infinity" valignment="CENTER" vgrow="ALWAYS" />
               </rowConstraints>
                <children>
-                  <Label text="Gráfico de gasto mensual en &#10;mantenimiento / suministros " textAlignment="CENTER" GridPane.rowIndex="2" />
-                  <Label text="Gráfico de número de entradas &#10;vendidas adulto / infantil por mes" textAlignment="CENTER" GridPane.rowIndex="1" />
-                  <Label text="Gráfico de número de atracciones por zona" />
-                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1">
+                  <Label styleClass="texto" text="Gráfico de número de entradas &#10;vendidas por mes" textAlignment="CENTER" GridPane.rowIndex="1" />
+                  <HBox alignment="CENTER" spacing="10.0" GridPane.columnIndex="1">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#botonPieChart" text="VER" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="(PieChart)" />
+                        <Button mnemonicParsing="false" onAction="#botonPieChart" styleClass="botonSecundario" text="VER" />
+                        <Label styleClass="subtitulo" text="(PieChart)" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <HBox alignment="CENTER" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#botonLineChart" text="VER" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="(LineChart)" />
+                        <Button mnemonicParsing="false" onAction="#botonLineChart" styleClass="botonSecundario" text="VER" />
+                        <Label styleClass="subtitulo" text="(LineChart)" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <HBox alignment="CENTER" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#botonStackedBarChart" text="VER" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="(StackedBarChart)" />
+                        <Button mnemonicParsing="false" onAction="#botonStackedBarChart" styleClass="botonSecundario" text="VER" />
+                        <Label styleClass="subtitulo" text="(StackedBarChart)" />
                      </children>
                   </HBox>
+                  <Label styleClass="texto" text="Gráfico de gasto mensual en &#10;mantenimiento y suministros " textAlignment="CENTER" GridPane.rowIndex="2" />
+                  <Label styleClass="texto" text="Gráfico de número de&#10;atracciones por zona" textAlignment="CENTER" />
                </children>
                <VBox.margin>
                   <Insets />

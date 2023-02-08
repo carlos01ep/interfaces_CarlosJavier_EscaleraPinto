@@ -1,0 +1,73 @@
+#titulo{
+	-fx-translate-x:50px;
+	-fx-font-weight: bold;
+	-fx-font-family: sans-serif;
+	-fx-font-size: 30px;
+	-fx-text-fill: white;
+}
+
+TitledPane:expanded {
+	-fx-font-weight: bold;
+	-fx-font-size: 14px;
+	-fx-text-fill: brown;
+}
+Accordion{
+	-fx-font-size: 12px;
+}
+
+TitledPane{
+	-fx-collapsible: true;	
+	-fx-animated: false;
+}
+
+GridPane {
+	-fx-background-color:orange; 
+	-fx-grid-lines-visible: true;
+}
+
+GridPane Line {
+  -fx-stroke   : orange;
+  -fx-scale-y:4;
+  -fx-scale-x:20;
+  -fx-blend-mode: overlay ;
+  -fx-focus-traversable:false;
+}
+GridPane > VBox, GridPane > HBox{
+	-fx-background-color:#36D7B4; 
+}
+
+
+VBox > Label{
+	-fx-font-weight: normal;
+	-fx-text-fill: white;
+	-fx-font-family: "Perpetua";
+}
+.subtitulo{
+	-fx-border-width: 0 0 10 0;
+	-fx-border-color: #36D7B4;
+	-fx-text-fill: brown;
+	-fx-font-weight: bold;
+	-fx-font-weight: normal;
+	-fx-background-color: white;
+	-fx-font-family: "Consolas";
+	-fx-padding: 2 7 0 7;
+}
+.fondogris{
+	-fx-background-color: grey;
+
+}
+.cabecera{
+	-fx-background-color: linear-gradient(from 35% 35% to 80% 75%, orange, #36D7B4);
+}
+
+StackPane CheckBox:selected {
+	-fx-border-width: 4px;
+	-fx-border-color: #36D7B4;
+	-fx-background-color: #36D7B4;
+	-fx-text-fill: white;
+}
+StackPane CheckBox {
+	-fx-text-fill: transparent;
+}
+
+

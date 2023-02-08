@@ -7,12 +7,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graficos.VentanaGraficosController">
    <children>
-      <StackedBarChart fx:id="stackedBarChart" title="Calificaciones" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <StackedBarChart fx:id="stackedBarChart" title="Gastos" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <xAxis>
-          <CategoryAxis label="Alumnos/módulos" side="BOTTOM" />
+          <CategoryAxis label="Meses del año" side="BOTTOM" />
         </xAxis>
         <yAxis>
-          <NumberAxis label="Notas" lowerBound="1.0" minorTickCount="1" side="LEFT" tickUnit="1.0" upperBound="10.0" />
+          <NumberAxis label="Euros" lowerBound="1.0" minorTickCount="1" side="LEFT" tickUnit="1.0" upperBound="10.0" />
         </yAxis>
       </StackedBarChart>
    </children>

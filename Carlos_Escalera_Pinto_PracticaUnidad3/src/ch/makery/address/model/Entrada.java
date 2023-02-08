@@ -12,7 +12,7 @@ import javafx.beans.property.SimpleStringProperty;
  * 
  * Clase auxiliar que se emplear� para el modelo de datos del TableView
  * 
- * @author SBF
+ * @author CJEP DAM 2
  * 
  */
 public class Entrada {

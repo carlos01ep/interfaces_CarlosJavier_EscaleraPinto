@@ -1,14 +1,17 @@
 .root {
-    /*-fx-font-size: 14px;
+    -fx-font-size: 14px;
     -fx-font-family: sans-serif;
-    -fx-background-color: #BDBDBD;*/
+    -fx-background-color: grey;
 }
 #titulo{
+	-fx-translate-x:50px;
 	-fx-font-weight: bold;
 	-fx-font-family: sans-serif;
 	-fx-font-size: 30px;
-	-fx-text-fill: orange;
+	-fx-text-fill: white;
 }
+
+
 
 #subtitulo{
 	-fx-font-weight: bold;
@@ -17,21 +20,119 @@
 	-fx-text-fill: orange;
 }
 .botonNaranja{
+	-fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
 	-fx-background-color: orange;
 	-fx-text-fill: white;
-	-fx-font-size: 12px;
+	-fx-font-weight: bold;
+}
+
+.botonGris{
+	-fx-background-color: white;
+	-fx-text-fill: grey;
+	-fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+	-fx-font-weight: bold;
+}
+.botonGris:hover{
+	-fx-background-color: grey;
+	-fx-text-fill: white;
+	-fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+	-fx-font-weight: bold;
+}
+.botonNaranja:hover{
+	-fx-font-family: "Segoe UI";
+	-fx-background-color: grey;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
 }
 HBox StackPane{
 	
 }
 #imgMain{
-	-fx-translate-x:50px;
-	-fx-rotate:18.5;
+	-fx-rotate:-18.5;
 }
 
 .botonSecundario{
 	/*-fx-background-color:orange;*/
-	-fx-text-fill: blue;
+	-fx-background-color: orange; 
+	-fx-text-fill: white;
+	-fx-font-size: 16px;
 	-fx-font-weight: bold;
+}
+.botonSecundario:hover{
+
+	-fx-background-color: grey; 
+	-fx-text-fill: white;
+	-fx-font-size: 16px;
+
+}
+
+#DetalleBorder {
+
+ -fx-border-insets: 0 0 0 0, 130 10 130 20,15;
+ -fx-border-width: 10 0 10 10,3 3 3 3,0 0 0 0 ; /* ancho de borde 3px */
+ -fx-border-color:  grey,white, grey; 
+ -fx-border-radius: 0 0 0 0, 10 10 10 10, 20 20 20 20;
+-fx-background-color: #36D7B4;
+-fx-background-radius:70 0 0 70;
+ 
+ }
+VBox, HVox{
+	-fx-background-color: linear-gradient(from 35% 35% to 80% 75%, orange, #36D7B4);
+}
+
+.table-view {
+    -fx-base: white;
+    -fx-control-inner-background: white;
+    -fx-background-color: white;
+    -fx-padding: 0;
+}
+.table-row, .table-cell{
+	-fx-border-color: transparent;
+} 
+/* Fondo de la cabecera */
+.table-view .column-header-background {
+    -fx-background-color: white;
+}
+.table-view .column-header, .table-view .filler {
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-border-color: 
+        transparent
+        transparent
+        derive(-fx-base, 80%) 
+        transparent;
+    -fx-border-insets: 0 10 1 0;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 16px;
+    -fx-font-family: "Consolas";
+    -fx-text-fill: grey;
+    -fx-alignment: center;
+    -fx-opacity: 1;
+}
+.table-column{
+	-fx-font-family: "Perpetua";
+	-fx-alignment: center ;
+}
+
+#buscador{
+	-fx-base: orange;
+	-fx-font-size: 16px;
+    -fx-control-inner-background: white;
+    -fx-background-color: #36D7B4;
+    -fx-padding: 5 5 5 5;
+    -fx-background-radius: 5 5 5 5;
+    
+}
+
+
+.split-pane:horizontal > .split-pane-divider {
+	-fx-border-width: 2;
+    -fx-border-color: transparent orange transparent grey;
+    -fx-background-color: transparent, derive(#36D7B4,20%);
+}
+.split-pane {
+    -fx-padding: 1 0 0 0;
 }
 

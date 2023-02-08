@@ -5,9 +5,9 @@ import javafx.beans.property.SimpleStringProperty;
 
 /**
  * 
- * Clase auxiliar que se emplear� para el modelo de datos del TableView
+ * Clase auxiliar para mostrar la lista en la pantalla de inico de persona
  * 
- * @author SBF
+ * @author CJEP DAM 2
  * 
  */
 public class Persona {

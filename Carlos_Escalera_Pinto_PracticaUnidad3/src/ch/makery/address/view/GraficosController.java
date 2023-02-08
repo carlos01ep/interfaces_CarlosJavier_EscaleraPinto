@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 import ch.makery.address.Main;
 import ch.makery.address.model.Entrada;
 import ch.makery.address.model.Person;
-import ch.makery.address.model.Persona;
 import ch.makery.address.util.DateUtil;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

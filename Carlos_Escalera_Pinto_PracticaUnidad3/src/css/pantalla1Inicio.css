@@ -1,8 +1,4 @@
-.root {
-    /*-fx-font-size: 14px;
-    -fx-font-family: sans-serif;
-    -fx-background-color: #BDBDBD;*/
-}
+
 #titulo{
 	-fx-translate-x:50px;
 	-fx-font-weight: bold;
@@ -23,10 +19,23 @@
 	-fx-text-fill: white;
 	-fx-font-weight: bold;
 }
+
 .botonGris{
 	-fx-background-color: white;
 	-fx-text-fill: grey;
 	-fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+	-fx-font-weight: bold;
+}
+.botonGris:hover{
+	-fx-background-color: grey;
+	-fx-text-fill: white;
+	-fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+	-fx-font-weight: bold;
+}
+.botonNaranja:hover{
+	-fx-font-family: "Segoe UI";
+	-fx-background-color: grey;
+	-fx-text-fill: white;
 	-fx-font-weight: bold;
 }
 HBox StackPane{
@@ -38,11 +47,17 @@ HBox StackPane{
 }
 
 .botonSecundario{
-	/*-fx-background-color:orange;*/
 	-fx-background-color: #36D7B4; 
 	-fx-text-fill: white;
 	-fx-font-size: 16px;
 	-fx-font-weight: bold;
+}
+.botonSecundario:hover{
+
+	-fx-background-color: orange; 
+	-fx-text-fill: white;
+	-fx-font-size: 16px;
+
 }
 
 #DetalleBorder {
@@ -63,9 +78,9 @@ VBox, HVox{
 }
 
 .table-view {
-    -fx-base: orange;
-    -fx-control-inner-background: orange;
-    -fx-background-color: orange;
+    -fx-base: white;
+    -fx-control-inner-background: white;
+    -fx-background-color: white;
     -fx-padding: 5;
 }
 .table-row, .table-cell{
@@ -76,7 +91,7 @@ VBox, HVox{
     -fx-background-color: white;
 }
 .table-view .column-header, .table-view .filler {
-    -fx-border-width: 0 0 1 0;
+    -fx-border-width: 1 1 1 1;
     -fx-background-color: transparent;
     -fx-border-color: 
         transparent
@@ -90,30 +105,30 @@ VBox, HVox{
     -fx-font-size: 20px;
     -fx-font-family: "Segoe UI Light";
     -fx-text-fill: grey;
-    -fx-alignment: center;
     -fx-opacity: 1;
+}
+.table-column{
+	-fx-font-family: "Perpetua";
+	    -fx-alignment: center;
 }
 
 #buscador{
 	-fx-base: orange;
 	-fx-font-size: 16px;
     -fx-control-inner-background: white;
-    -fx-background-color: orange;
-    -fx-padding: 5 6 0 5;
+    -fx-background-color: white;
+    -fx-padding: 5 6 2 5;
+ 
 }
-.table-view:focused .table-row-cell:filled:focused:selected {
-    -fx-background-color: -fx-focus-color;
-}
-.table-view:focused .table-row-cell:empty{
-	-fx-background-color: transparent;
-} 
 .split-pane:horizontal > .split-pane-divider {
-	-fx-border-width: 2;
+	-fx-border-width: 3;
     -fx-border-color: transparent orange transparent grey;
-    -fx-background-color: transparent, derive(#36D7B4,20%);
+    -fx-background-color: transparent, derive(#36D7B4,65%);
 }
 .split-pane {
     -fx-padding: 1 0 0 0;
 }
+
+
 
 
