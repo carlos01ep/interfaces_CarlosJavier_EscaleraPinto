@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="root" prefHeight="650.0" prefWidth="1000.0" stylesheets="@../../../css/pantalla1Inicio.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="greenplanet.address.view.InicioController">
+   <children>
+      <VBox layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <StackPane alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="844.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label id="titulo" alignment="CENTER" contentDisplay="CENTER" text="CONTROL DE ENTRADAS" StackPane.alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding></Label>
+                     </children>
+                  </StackPane>
+                  <StackPane prefHeight="100.0" prefWidth="337.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <ImageView id="imgMain" fitHeight="70.0" fitWidth="70.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                           <image>
+                              <Image url="@../../../images/Logo1.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+               </children>
+            </HBox>
+            <SplitPane dividerPositions="0.5070112179487178" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+               <items>
+                  <AnchorPane>
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox id="buscador">
+                                 <children>
+                                    <TextField fx:id="textFieldBuscar" nodeOrientation="LEFT_TO_RIGHT" prefWidth="270.0" promptText="NOMBRE/APELLIDO" HBox.hgrow="ALWAYS" />
+                                    <Button mnemonicParsing="false" onAction="#botonBuscar" prefWidth="120.0" styleClass="botonSecundario" text="BUSCAR" />
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="table1" VBox.vgrow="ALWAYS">
+                                 <columns>
+                                    <TableColumn fx:id="colNombre" prefWidth="75.0" text="NOMBRE" />
+                                    <TableColumn fx:id="colApellido" prefWidth="75.0" text="APELLIDO" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane>
+                     <children>
+                        <VBox id="DetalleBorder" layoutX="185.0" layoutY="97.0" prefHeight="250.0" prefWidth="210.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <StackPane HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label id="subtitulo" alignment="CENTER" text="DETALLE" />
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </HBox>
+                              <GridPane alignment="TOP_CENTER" hgap="10.0" prefHeight="316.0" prefWidth="476.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.0" minWidth="10.0" prefWidth="170.39998779296874" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="360.0" minWidth="10.0" prefWidth="252.00001220703126" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="Nombre" />
+                                    <Label text="Apellidos" GridPane.rowIndex="1" />
+                                    <Label text="Fecha de compra" GridPane.rowIndex="2" />
+                                    <Label text="Fecha de entrada" GridPane.rowIndex="3" />
+                                    <Label text="Número de entradas" GridPane.rowIndex="4" />
+                                    <Label text="Descuento" GridPane.rowIndex="5" />
+                                    <Label text="Precio Total Entradas" GridPane.rowIndex="6" />
+                                    <Label text="Forma de pago" GridPane.rowIndex="7" />
+                                    <Label fx:id="labelNombre" text="nobmre" GridPane.columnIndex="1" />
+                                    <Label fx:id="labelApellido" text="apellido" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label fx:id="labelFecha" text="fecha" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Label fx:id="labelDescuento" text="descuento" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    <Label fx:id="labelPrecio" text="precio" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                    <Label fx:id="labelFormaPago" text="formaPago" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                    <HBox alignment="CENTER_LEFT" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <children>
+                                          <Label text="Adulto:" />
+                                          <Label fx:id="labelNumAdulto" text="numAdulto" />
+                                          <Label text="Infantil:" />
+                                          <Label fx:id="labelNumInfantil" text="numInfantil" />
+                                       </children>
+                                    </HBox>
+                                    <Label GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Label fx:id="labelFechaEntrada" text="fechaEntrada" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+            <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#botonEditar" prefHeight="30.0" prefWidth="138.0" styleClass="botonNaranja" text="MANTENIMIENTO" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#botonSalir" prefHeight="30.0" prefWidth="100.0" styleClass="botonGris" text="SALIR" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
